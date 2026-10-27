@@ -1,0 +1,41 @@
+# 류시하 머리카락 애니메이션 초안
+
+몸과 얼굴을 고정하고 좌우 긴 머리카락을 따로 움직이기 위한 PSD 파츠와 After Effects 자동 구성 스크립트입니다.
+
+## 다운로드
+
+- [전체 작업 파일 ZIP](./Ryusiha_Hair_Draft_Package.zip?raw=true)
+- [레이어형 PSD](./Ryusiha_Hair_Draft.psd?raw=true)
+- [8초 움직임 미리보기 MP4](./Hair_Motion_Preview.mp4?raw=true)
+- [After Effects 스크립트](./Build_Hair_Motion.jsx?raw=true)
+- [자세한 사용 안내](./README_KO.txt)
+
+![파츠 합성 미리보기](./layered_preview.png)
+
+## After Effects에서 실행
+
+1. ZIP을 다운로드하고 압축을 풉니다.
+2. `Build_Hair_Motion.jsx`와 `assets` 폴더를 같은 폴더에 둡니다.
+3. After Effects에서 **파일 → 스크립트 → 스크립트 파일 실행**으로 JSX를 실행합니다.
+4. 생성된 `RYUSIHA_HAIR_8s` 컴포지션을 재생합니다.
+5. `HAIR_CONTROLS`의 `Hair strength`로 움직임을 조절하고 AEP로 저장합니다.
+
+스크립트는 AE에 포함되는 Cycore의 `CC Bend It` 효과를 사용합니다. 제공된 MP4는 FFmpeg로 만든 움직임 시안이며, AE 스크립트의 렌더링 결과와 완전히 동일하지 않습니다.
+
+## PSD 레이어
+
+| 레이어 | 용도 |
+| --- | --- |
+| `BODY_BASE_fixed` | 긴 머리카락을 제외한 고정 몸 |
+| `HAIR_L_screen_left` | 화면 왼쪽 긴 머리카락 |
+| `HAIR_R_screen_right` | 화면 오른쪽 긴 머리카락 |
+| `ORIGINAL_REFERENCE_hidden` | 비교용 원본, 기본적으로 숨김 |
+
+## 검증 및 제한
+
+- PSD를 다시 열어 4개 레이어의 배치와 가시성을 확인했습니다. 비교용 원본 레이어의 픽셀은 보존했습니다.
+- 미리보기 영상은 488×806, 30fps, 8초, 240프레임으로 출력했습니다.
+- AE 스크립트의 문법은 검사했지만 실제 After Effects 실행과 렌더링은 검증하지 못했습니다.
+- 원본은 단일 레이어 PSD였으며, 파츠에는 AI 편집과 가려진 부분 복원이 포함되어 있습니다. 머리 결·실루엣과 일부 세부 묘사가 원본과 다릅니다.
+- 가장자리의 밝은색·유색 잔여물은 추가 마스크 보정이 필요합니다.
+- 앞머리·눈·입·몸의 리깅은 포함하지 않았습니다. 완성된 Live2D 모델이 아닙니다.
