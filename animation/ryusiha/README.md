@@ -1,6 +1,8 @@
 # 류시하 머리카락 애니메이션 초안
 
-**최신 v6 검토본: [다리·부츠의 옆 늘어짐 수정](./v6/README.md)** — [필수 ZIP 1](./v6/Ryusiha_Natural_Motion_v6_Package.zip?raw=true) · [필수 ZIP 2](./v6/Ryusiha_Natural_Motion_v6_Media2.zip?raw=true) · [v5·v6 비교](./v6/V5_V6_Comparison.mp4?raw=true). 실제 AE 렌더링은 미검증입니다.
+**최신 v7 검토본: [이미지 보정·하체 형태 고정](./v7/README.md)** — [필수 ZIP 1](./v7/Ryusiha_Natural_Motion_v7_Package.zip?raw=true) · [필수 ZIP 2](./v7/Ryusiha_Natural_Motion_v7_Media2.zip?raw=true) · [v6·v7 비교](./v7/V6_V7_Comparison.mp4?raw=true). 보호된 하체 픽셀의 480프레임 동일성을 검사했습니다. 실제 AE 렌더링은 미검증입니다.
+
+**이전 v6 검토본: [다리·부츠의 옆 늘어짐 수정](./v6/README.md)** — [필수 ZIP 1](./v6/Ryusiha_Natural_Motion_v6_Package.zip?raw=true) · [필수 ZIP 2](./v6/Ryusiha_Natural_Motion_v6_Media2.zip?raw=true) · [v5·v6 비교](./v6/V5_V6_Comparison.mp4?raw=true). 실제 AE 렌더링은 미검증입니다.
 
 **이전 v5 검토본: [어깨·배 연결부 수정](./v5/README.md)** — [필수 ZIP 1](./v5/Ryusiha_Natural_Motion_v5_Package.zip?raw=true) · [필수 ZIP 2](./v5/Ryusiha_Natural_Motion_v5_Media2.zip?raw=true) · [연결부 확대 영상](./v5/Shoulder_Waist_v5.mp4?raw=true). 실제 AE 렌더링은 미검증입니다.
 

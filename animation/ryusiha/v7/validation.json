@@ -1,0 +1,12 @@
+{
+  "version": 7,
+  "duration_seconds": 16,
+  "fps": 30,
+  "frames_verified": 480,
+  "protected_pixel_count": 56620,
+  "protected_rgba_equal_in_all_frames": true,
+  "decoded_mov_rgba_equals_render_sources": true,
+  "exact_loop_pose": true,
+  "ae_expression_samples": 961,
+  "actual_ae_render_verified": false
+}
