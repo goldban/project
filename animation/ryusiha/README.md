@@ -1,6 +1,8 @@
 # 류시하 머리카락 애니메이션 초안
 
-**최신 수정본: [자연스러운 대기 모션 v2](./v2/README.md)** — 팔·고개·상체·눈 깜빡임을 추가하고 머리카락 효과의 여백과 변형 축을 수정했습니다. [v2 전체 ZIP 다운로드](./v2/Ryusiha_Natural_Motion_v2_Package.zip?raw=true).
+**최신 v3 검토본: [깜빡임·몸·팔 대기 모션 수정](./v3/README.md)** — [전체 ZIP](./v3/Ryusiha_Natural_Motion_v3_Package.zip?raw=true) · [전신 미리보기](./v3/Natural_Motion_v3_Preview.mp4?raw=true) · [눈·상체 확대](./v3/Face_and_Shoulders_v3.mp4?raw=true). 실제 AE 렌더링은 미검증입니다.
+
+**이전 수정본: [자연스러운 대기 모션 v2](./v2/README.md)** — 팔·고개·상체·눈 깜빡임을 추가하고 머리카락 효과의 여백과 변형 축을 수정했습니다. [v2 전체 ZIP 다운로드](./v2/Ryusiha_Natural_Motion_v2_Package.zip?raw=true).
 
 아래는 이전 v1 파일과 안내입니다.
 
