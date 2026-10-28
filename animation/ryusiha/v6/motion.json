@@ -1,0 +1,26 @@
+{
+  "duration": 16,
+  "fps": 60,
+  "blink_centers": [
+    1.9,
+    5.4,
+    8.1,
+    11.6,
+    12.02,
+    14.5
+  ],
+  "expressions": {
+    "root_roll": ".34*sin(w*t)+.10*sin(2*w*t+.2)",
+    "body_x": "3*sin(w*t)+1.2*sin(2*w*t-.4)",
+    "body_y": "-2.8*sin(4*w*t)",
+    "body_roll": ".75*sin(w*t-.15)+.20*sin(2*w*t+.3)",
+    "breath": ".22*sin(4*w*t)",
+    "head_x": "1.8*sin(2*w*t-.45)",
+    "head_y": "-1.4*g1-1.0*g2",
+    "head_roll": "1.8*sin(2*w*t-.45)+.55*sin(3*w*t+.2)+1.2*(g1-g2)",
+    "arm_left": "3.2*sin(2*w*t-.7)+.65*sin(3*w*t-.3)+2*g1",
+    "arm_right": "-2.8*sin(2*w*t-1.1)-.65*sin(3*w*t-.7)-2.8*g2",
+    "hair_left": ".65*sin(2*w*t-.9)+.18*sin(3*w*t-1.2)",
+    "hair_right": "-.60*sin(2*w*t-1.35)-.16*sin(3*w*t-1.6)"
+  }
+}
