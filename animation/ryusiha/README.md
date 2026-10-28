@@ -1,6 +1,8 @@
 # 류시하 머리카락 애니메이션 초안
 
-**최신 v4 검토본: [16초 · 동작 확대](./v4/README.md)** — [전체 ZIP](./v4/Ryusiha_Natural_Motion_v4_Package.zip?raw=true) · [전신 미리보기](./v4/Natural_Motion_v4_Preview.mp4?raw=true) · [v3·v4 비교](./v4/V3_V4_Comparison.mp4?raw=true). 실제 AE 렌더링은 미검증입니다.
+**최신 v5 검토본: [어깨·배 연결부 수정](./v5/README.md)** — [필수 ZIP 1](./v5/Ryusiha_Natural_Motion_v5_Package.zip?raw=true) · [필수 ZIP 2](./v5/Ryusiha_Natural_Motion_v5_Media2.zip?raw=true) · [연결부 확대 영상](./v5/Shoulder_Waist_v5.mp4?raw=true). 실제 AE 렌더링은 미검증입니다.
+
+**이전 v4 검토본: [16초 · 동작 확대](./v4/README.md)** — [전체 ZIP](./v4/Ryusiha_Natural_Motion_v4_Package.zip?raw=true) · [전신 미리보기](./v4/Natural_Motion_v4_Preview.mp4?raw=true) · [v3·v4 비교](./v4/V3_V4_Comparison.mp4?raw=true). 실제 AE 렌더링은 미검증입니다.
 
 **이전 v3 검토본: [깜빡임·몸·팔 대기 모션 수정](./v3/README.md)** — [전체 ZIP](./v3/Ryusiha_Natural_Motion_v3_Package.zip?raw=true) · [전신 미리보기](./v3/Natural_Motion_v3_Preview.mp4?raw=true) · [눈·상체 확대](./v3/Face_and_Shoulders_v3.mp4?raw=true). 실제 AE 렌더링은 미검증입니다.
 
