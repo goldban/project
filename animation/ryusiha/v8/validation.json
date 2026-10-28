@@ -1,0 +1,17 @@
+{
+  "version": 8,
+  "workflow": "reference opening idle motion",
+  "duration_seconds": 12,
+  "fps": 30,
+  "frames_verified": 360,
+  "lower_body_pixels_identical_all_frames": true,
+  "decoded_mov_matches_source_rgba": true,
+  "head_and_hand_control_distances_preserved": true,
+  "exact_visual_loop": true,
+  "mesh_visible_edge_ratio_sampled_range": [
+    0.907699,
+    1.092354
+  ],
+  "ae_expression_samples": 721,
+  "actual_ae_render_verified": false
+}
