@@ -1,5 +1,7 @@
 # 류시하 머리카락 애니메이션 초안
 
+**가로형 레퍼런스 모션 · AE 편집용 JSX: [Reference Motion v3](./reference_motion_v3/README.md)** — [전체 ZIP](./reference_motion_v3/Reference_Motion_v3_Package.zip?raw=true) · [JSX](./reference_motion_v3/Build_Reference_Motion_v3.jsx?raw=true) · [영상](./reference_motion_v3/character_reference_v3.mp4?raw=true). 상반신 확대·카메라·그래픽 편집이 가능하며, 몸·머리카락의 세부 변형은 투명 영상에 렌더링되어 있습니다.
+
 **최신 v8 검토본: [레퍼런스 초반의 안정적인 대기 모션](./v8/README.md)** — [미리보기](./v8/Natural_Motion_v8_Preview.mp4?raw=true) · [필수 ZIP 1](./v8/Ryusiha_Natural_Motion_v8_Package.zip?raw=true) · [필수 ZIP 2](./v8/Ryusiha_Natural_Motion_v8_Media2.zip?raw=true). 관절 제약 메시 기반 12초 구성입니다. 실제 AE 렌더링은 미검증입니다.
 
 **이전 v7 검토본: [이미지 보정·하체 형태 고정](./v7/README.md)** — [필수 ZIP 1](./v7/Ryusiha_Natural_Motion_v7_Package.zip?raw=true) · [필수 ZIP 2](./v7/Ryusiha_Natural_Motion_v7_Media2.zip?raw=true) · [v6·v7 비교](./v7/V6_V7_Comparison.mp4?raw=true). 보호된 하체 픽셀의 480프레임 동일성을 검사했습니다. 실제 AE 렌더링은 미검증입니다.

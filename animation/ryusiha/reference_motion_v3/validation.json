@@ -1,0 +1,52 @@
+{
+  "alpha_movie": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "prores",
+        "width": 960,
+        "height": 720,
+        "pix_fmt": "yuva444p12le",
+        "r_frame_rate": "30/1",
+        "nb_read_frames": "300"
+      }
+    ],
+    "format": {
+      "duration": "10.000000",
+      "size": "51743129"
+    }
+  },
+  "alpha_check": "PASS: transparent and opaque pixels in each of 300 frames",
+  "jsx_syntax_and_mock": "PASS: 188 expression samples; missing asset and failure-cleanup cases; actual AE unverified",
+  "metadata": {
+    "programs": [],
+    "stream_groups": [],
+    "streams": [
+      {
+        "codec_name": "h264",
+        "width": 1920,
+        "height": 1080,
+        "pix_fmt": "yuv420p",
+        "r_frame_rate": "30/1",
+        "nb_read_frames": "300"
+      }
+    ],
+    "format": {
+      "duration": "10.000000",
+      "size": "6021143"
+    }
+  },
+  "full_decode": "PASS: 300 frames",
+  "loop_continuity_check": "PASS",
+  "seam_mean_pixel_difference": 1.5485126972198486,
+  "mean_adjacent_pixel_difference": 2.075209856033325,
+  "max_adjacent_pixel_difference": 4.2050461769104,
+  "video_sha256": "f70a46b23393d454711b422966bffd7c20152371405aac96fbeba115f37dddfb",
+  "reference_reviewed": "12.mp4, 9.95 seconds, 854x480, 60fps",
+  "limitations": [
+    "Original pose retained; no arm extension, lip sync, or gaze animation",
+    "Fine body/hair motion is baked; AE camera and graphic layers are editable",
+    "Silent output; reference audio not copied"
+  ]
+}
