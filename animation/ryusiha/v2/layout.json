@@ -1,0 +1,11 @@
+{
+  "canvas": [1280, 1920], "offset": [152, 154], "duration": 8, "fps": 30,
+  "hair_left": {"file": "hair_left.png", "pos": [0, 0]},
+  "hair_right": {"file": "hair_right.png", "pos": [488, 0]},
+  "lower_body": {"file": "lower_body.png", "pos": [0, 540]},
+  "arm_left": {"file": "arm_left.png", "pos": [144, 295], "pivot": [392, 315]},
+  "arm_right": {"file": "arm_right.png", "pos": [522, 295], "pivot": [586, 315]},
+  "torso": {"file": "torso.png", "pos": [330, 250], "pivot": [488, 550]},
+  "head_open": {"file": "head_open.png", "pos": [340, 0], "pivot": [488, 258]},
+  "eyes_closed": {"file": "eyes_closed.png", "pos": [416, 150], "pivot": [488, 258]}
+}
