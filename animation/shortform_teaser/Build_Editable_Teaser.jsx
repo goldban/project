@@ -1,0 +1,105 @@
+#target aftereffects
+/* Extract the complete ZIP, run this file in After Effects, then Save As .aep.
+   Text, timing, shapes, background transforms and audio are editable layers.
+   Character and wooden sign are contained in a single background illustration. */
+(function () {
+    var SETTINGS = {
+        title: "[ 작품명 ]",
+        release: "개봉일 입력",
+        date: "YYYY.MM.DD",
+        font: "NotoSansCJKkr-Bold",
+        duration: 15,
+        fps: 30
+    };
+    var here = new File($.fileName).parent;
+    var files = [new File(here.fsName + "/assets/background.png"), new File(here.fsName + "/assets/original-rhythm.wav")];
+    for (var i = 0; i < files.length; i++) {
+        if (!files[i].exists) { alert("전체 ZIP을 먼저 풀어주세요. 누락 파일: " + files[i].name); return; }
+    }
+    if (!app.project) app.newProject();
+    var created = [], expressions = [], folder, master;
+    app.beginUndoGroup("Editable Character Teaser");
+    try {
+        folder = app.project.items.addFolder("EDITABLE_TEASER_" + new Date().getTime());
+        created.push(folder);
+        function reg(item) { created.push(item); item.parentFolder = folder; return item; }
+        var background = reg(app.project.importFile(new ImportOptions(files[0])));
+        var audio = reg(app.project.importFile(new ImportOptions(files[1])));
+        master = reg(app.project.items.addComp("EDIT_ME_1080x1920_15s",1080,1920,1,SETTINGS.duration,SETTINGS.fps));
+        master.workAreaStart = 0; master.workAreaDuration = SETTINGS.duration;
+        master.motionBlur = true;
+        function tr(l) { return l.property("ADBE Transform Group"); }
+        function span(l,a,b) { l.inPoint=a; l.outPoint=b; return l; }
+        function expr(p,s) { p.expression=s; expressions.push(p); }
+        function motion(l,a,b,x,y,mode) {
+            var p=tr(l).property("ADBE Position");
+            p.setValueAtTime(a,[x+(mode===-1?-1100:mode===1?1100:0),y+(!mode?60:0)]);
+            p.setValueAtTime(a+.38,[x,y]);
+            var op=tr(l).property("ADBE Opacity");op.setValueAtTime(a,0);op.setValueAtTime(a+.20,100);
+            if(b<15){op.setValueAtTime(b-.10,100);op.setValueAtTime(b,0);}
+            for(var k=1;k<=p.numKeys;k++)p.setTemporalEaseAtKey(k,[new KeyframeEase(0,70)],[new KeyframeEase(0,70)]);
+            l.motionBlur=true;
+        }
+        function text(name,words,a,b,x,y,size,color,mode) {
+            var l=span(master.layers.addText(words),a,b);l.name=name;
+            var p=l.property("ADBE Text Properties").property("ADBE Text Document");var td=p.value;
+            td.font=SETTINGS.font;td.fontSize=size;td.applyFill=true;td.fillColor=color;td.applyStroke=false;td.justification=ParagraphJustification.CENTER_JUSTIFY;p.setValue(td);
+            expr(tr(l).property("ADBE Anchor Point"),'var r=sourceRectAtTime(time,false);[r.left+r.width/2,r.top+r.height/2];');
+            motion(l,a,b,x,y,mode);return l;
+        }
+        var ink=[.145,.141,.286],blue=[.286,.561,.780],white=[1,1,1],yellow=[1,.875,.525];
+        var dark=span(master.layers.addSolid([.075,.047,.18],"01 INTRO / editable background color",1080,1920,1,15),0,3.5);
+        var bg=span(master.layers.add(background),3.5,15);bg.name="02 ILLUSTRATION / replace image here";
+        tr(bg).property("ADBE Position").setValue([540,960]);
+        var cover=Math.max(1080/background.width,1920/background.height)*100;
+        tr(bg).property("ADBE Scale").setValueAtTime(3.5,[cover*1.10,cover*1.10]);
+        tr(bg).property("ADBE Scale").setValueAtTime(4.0,[cover,cover]);
+        function shape(name,a,b,size,pos,color,ellipse) {
+            var l=span(master.layers.addShape(),a,b);l.name=name;
+            var group=l.property("ADBE Root Vectors Group").addProperty("ADBE Vector Group");
+            var contents=group.property("ADBE Vectors Group");
+            var path=contents.addProperty(ellipse?"ADBE Vector Shape - Ellipse":"ADBE Vector Shape - Rect");
+            path.property(ellipse?"ADBE Vector Ellipse Size":"ADBE Vector Rect Size").setValue(size);
+            contents.addProperty("ADBE Vector Graphic - Fill").property("ADBE Vector Fill Color").setValue(color);
+            tr(l).property("ADBE Position").setValue(pos);return l;
+        }
+        var ribbon=shape("INTRO RIBBON / color + rotation",0,3.5,[1900,130],[540,1320],[.53,.80,.95],false);
+        tr(ribbon).property("ADBE Rotate Z").setValue(-27);
+        tr(ribbon).property("ADBE Position").setValueAtTime(0,[540,1500]);tr(ribbon).property("ADBE Position").setValueAtTime(3.5,[540,1050]);
+        for(var j=0;j<7;j++){
+            var dot=shape("ACCENT "+(j+1),0,10,[12+(j%3)*4,12+(j%3)*4],[85+j*149,260],yellow,true);
+            expr(tr(dot).property("ADBE Position"),'['+(85+j*149)+'+20*Math.sin(time*2+'+j+'),260+24*Math.cos(time*2+'+j+')];');
+        }
+        text("01a 잠깐","잠깐,",0,1.5,540,690,168,white,-1);
+        text("01b 여기 봐","여기 봐!",.18,1.5,540,925,144,[.74,.92,1],1);
+        text("02a 새로운 이야기","새로운 이야기가",1.5,3.5,540,720,84,white,1);
+        text("02b 시작돼","시작돼",1.65,3.5,540,930,144,yellow,0);
+        text("03a 작은 만남","작은 만남,",3.5,6,615,560,84,ink,1);
+        text("03b 커다란 설렘","커다란 설렘",3.68,6,615,695,84,blue,-1);
+        text("03c 보조 문구","당신을 기다리는 이야기",3.85,6,615,868,38,ink,0);
+        text("04a 상상이","상상이",6,8.5,615,560,96,ink,0);
+        text("04b 움직이는 순간","움직이는 순간",6.14,8.5,615,695,78,blue,1);
+        text("04c 보조 문구","곧, 만나러 갑니다",6.3,8.5,615,868,38,ink,0);
+        text("05a 기억해 주세요","기억해 주세요",8.5,10,615,600,80,ink,0);
+        text("05b 우리 만나는 날","우리 만나는 날",8.65,10,615,735,72,blue,0);
+        text("EDIT TITLE / 작품명",SETTINGS.title,10,15,615,545,84,ink,1);
+        text("EDIT RELEASE / 개봉 문구",SETTINGS.release,10.2,15,615,690,90,blue,0);
+        text("EDIT DATE / 개봉일",SETTINGS.date,10.4,15,615,800,48,[.42,.44,.57],0);
+        text("EDIT CTA / 마지막 문구","극장에서 만나요",10.55,15,615,885,38,ink,0);
+        shape("CTA PILL / editable color",10,15,[480,84],[540,1662],ink,false);
+        text("COMING SOON","COMING SOON",10,15,540,1662,42,white,0);
+        var music=master.layers.add(audio);music.name="AUDIO / original rhythm (replace or mute)";span(music,0,15);
+        text("DRAFT LABEL / hide for export","MOTION TEASER · 시안",0,15,250,120,26,blue,0);
+        var marker=new MarkerValue("자막: 텍스트 레이어 더블클릭 / 시간: 레이어 양 끝과 키프레임 이동 / 작품명·개봉일: EDIT 레이어 수정");
+        master.markerProperty.setValueAtTime(0,marker);
+        for(var n=0;n<expressions.length;n++){
+            expressions[n].valueAtTime(11,false);
+            if(expressions[n].expressionError)throw new Error(expressions[n].expressionError);
+        }
+        master.openInViewer();
+        alert("편집 가능한 컴포지션을 만들었습니다.\nEDIT 레이어에서 작품명·개봉일을 바꾸세요.\n파일 > 다른 이름으로 저장으로 .aep를 저장하세요.\n캐릭터와 팻말은 한 장의 이미지이며 파츠 리깅은 아닙니다.");
+    } catch(e) {
+        for(var c=created.length-1;c>=0;c--){try{created[c].remove();}catch(ignore){}}
+        alert("생성 실패: "+e.toString());
+    } finally {app.endUndoGroup();}
+})();
