@@ -1,0 +1,79 @@
+from PIL import Image, ImageDraw, ImageFont, ImageFilter
+import numpy as np, math, subprocess, wave, json
+from pathlib import Path
+P=Path(__file__).resolve().parent; W,H=720,1280; FPS=30; DUR=15
+font='/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc'
+fonts={s:ImageFont.truetype(font,s,index=1) for s in [20,24,28,32,38,48,56,64,72,84,96,112]}
+bg=Image.open(P/'assets/background.png').convert('RGB').resize((W,H),Image.Resampling.LANCZOS)
+y,x=np.mgrid[:H,:W]; glow=np.exp(-(((x-360)/450)**2+((y-600)/650)**2))
+dark=np.stack([15+44*glow,12+15*glow,38+68*glow],2).astype('uint8'); dark=Image.fromarray(dark)
+def ease(v): return 1-(1-max(0,min(1,v)))**3
+def text(im,s,cy,size=64,fill='#FFFFFF',dx=0,scale=1):
+ f=fonts[size]; layer=Image.new('RGBA',(W,260)); d=ImageDraw.Draw(layer); box=d.textbbox((0,0),s,font=f); tw=box[2]-box[0]; d.text(((W-tw)/2,85-box[1]),s,font=f,fill=fill)
+ if scale!=1:
+  layer=layer.resize((max(1,int(W*scale)),max(1,int(260*scale))),Image.Resampling.BICUBIC)
+ im.paste(layer,(int((W-layer.width)/2+dx),int(cy-layer.height/2)),layer)
+def badge(im,label,t):
+ d=ImageDraw.Draw(im);d.rounded_rectangle((42,60,270,103),radius=21,fill='#C8EDFF');d.text((61,66),label,font=fonts[20],fill='#242449')
+ d.rounded_rectangle((42,1196,678,1201),radius=2,fill='#D7D9E5');d.rounded_rectangle((42,1196,42+int(636*t/DUR),1201),radius=2,fill='#73B9F2')
+def frame(t):
+ beat=(t*2)%1
+ if t<3.5:
+  im=dark.copy();d=ImageDraw.Draw(im)
+  for k in range(6):
+   rad=int(100+k*100+(t*80)%100);d.ellipse((360-rad,610-rad,360+rad,610+rad),outline=(80+k*17,65+k*12,160+k*13),width=2)
+  d.polygon([(0,990-int(t*80)),(720,620-int(t*80)),(720,710-int(t*80)),(0,1080-int(t*80))],fill='#88CDF3')
+  if t<1.5:
+   u=ease(t/.45);text(im,'잠깐,',480,112,dx=(1-u)*-700,scale=1+.08*(1-beat));text(im,'여기 봐!',635,96,fill='#BDEBFF',dx=(1-ease((t-.2)/.4))*700)
+  else:
+   u=ease((t-1.5)/.4);text(im,'새로운 이야기가',500,56,dx=(1-u)*700);text(im,'시작돼',650,96,fill='#FFDF86',scale=.75+.25*u)
+  text(im,'A LITTLE MOTION. A BIG MOMENT.',1020,20,fill='#D4C8EE')
+ else:
+  local=t-3.5
+  z=1.0+.025*math.sin(local*1.5)+.022*(1-beat) if t<10 else 1.0
+  rw,rh=int(W*z),int(H*z);im=bg.resize((rw,rh),Image.Resampling.BICUBIC);im=im.crop(((rw-W)//2,(rh-H)//2,(rw+W)//2,(rh+H)//2))
+  # Captions occupy the original blank wooden board; no paint-over of character.
+  if t<6:
+   u=ease(local/.5);text(im,'작은 만남,',405,56,fill='#252449',dx=(1-u)*680);text(im,'커다란 설렘',493,56,fill='#498FC7',dx=-(1-ease((local-.18)/.45))*680)
+   text(im,'당신을 기다리는 이야기',610,28,fill='#343452')
+  elif t<8.5:
+   u=ease((t-6)/.45);text(im,'상상이',400,64,fill='#252449',scale=.6+.4*u);text(im,'움직이는 순간',493,56,fill='#498FC7',dx=(1-u)*700);text(im,'곧, 만나러 갑니다',610,28,fill='#343452')
+  elif t<10:
+   text(im,'기억해 주세요',425,56,fill='#252449',scale=.8+.2*ease((t-8.5)/.4));text(im,'우리 만나는 날',520,48,fill='#498FC7')
+  else:
+   text(im,'[ 작품명 ]',391,56,fill='#252449',dx=(1-ease((t-10)/.4))*680)
+   text(im,'개봉일 입력',490,64,fill='#386FA6',scale=.7+.3*ease((t-10.2)/.45))
+   text(im,'YYYY.MM.DD',561,32,fill='#6B7092')
+   text(im,'극장에서 만나요',610,28,fill='#343452')
+   d=ImageDraw.Draw(im);d.rounded_rectangle((200,1080,520,1136),radius=28,fill='#252449');d.text((249,1089),'COMING SOON',font=fonts[28],fill='#FFFFFF')
+  if t<4.05:
+   q=1-ease((t-3.5)/.55);over=dark.copy();im.paste(over.crop((0,0,int(W*q),H)),(0,0))
+ # Moving corner accents, reserved UI safe margins.
+ d=ImageDraw.Draw(im)
+ if t<10:
+  for j in range(5):
+   cx=int(55+j*147+18*math.sin(t*2+j));cy=int(180+22*math.cos(t*2+j));r=5+j%3
+   d.ellipse((cx-r,cy-r,cx+r,cy+r),fill='#FFDB81')
+ badge(im,'MOTION TEASER · 시안',t)
+ return im
+# Original minimal 120 BPM rhythm, no audio copied from reference.
+sr=48000; a=np.zeros((sr*DUR,2),np.float32);rng=np.random.default_rng(7)
+for k in range(DUR*2):
+ pos=int(k*.5*sr); tt=np.arange(int(.22*sr))/sr
+ kick=np.sin(2*np.pi*(48*tt+7*(1-np.exp(-tt*25))))*np.exp(-tt*27)*.34
+ n=min(len(kick),len(a)-pos);a[pos:pos+n]+=kick[:n,None]
+ if k%2:
+  tt=np.arange(int(.13*sr))/sr;sn=rng.normal(0,.055,len(tt))*np.exp(-tt*36);n=min(len(sn),len(a)-pos);a[pos:pos+n]+=sn[:n,None]
+for tm in [0,1.5,3.5,6,8.5,10]:
+ pos=int(tm*sr);tt=np.arange(int(.38*sr))/sr
+ tone=(np.sin(2*np.pi*660*tt)+.4*np.sin(2*np.pi*990*tt))*np.exp(-tt*12)*.09
+ n=min(len(tone),len(a)-pos);a[pos:pos+n]+=tone[:n,None]
+a[-sr:]*=np.linspace(1,0,sr)[:,None]
+with wave.open(str(P/'original-rhythm.wav'),'wb') as f:f.setnchannels(2);f.setsampwidth(2);f.setframerate(sr);f.writeframes((np.clip(a,-1,1)*32767).astype('<i2').tobytes())
+proc=subprocess.Popen(['ffmpeg','-y','-v','error','-f','rawvideo','-pix_fmt','rgb24','-s','720x1280','-r','30','-i','-','-i',str(P/'original-rhythm.wav'),'-vf','scale=1080:1920','-c:v','libx264','-preset','fast','-crf','19','-threads','4','-pix_fmt','yuv420p','-c:a','aac','-b:a','192k','-shortest','-movflags','+faststart',str(P/'character_teaser_draft.mp4')],stdin=subprocess.PIPE)
+for i in range(FPS*DUR):
+ im=frame(i/FPS);proc.stdin.write(im.tobytes())
+ if i in [20,70,145,215,285,380]:im.save(P/f'shot-{i}.jpg')
+ if i%90==0:print(f'{i}/{FPS*DUR}',flush=True)
+proc.stdin.close();assert proc.wait()==0
+print('RENDER COMPLETE',flush=True)
