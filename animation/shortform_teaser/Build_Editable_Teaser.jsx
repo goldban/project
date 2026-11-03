@@ -8,7 +8,7 @@
         release: "개봉일 입력",
         date: "YYYY.MM.DD",
         font: "NotoSansCJKkr-Bold",
-        duration: 15,
+        duration: 20,
         fps: 30
     };
     var here = new File($.fileName).parent;
@@ -25,7 +25,7 @@
         function reg(item) { created.push(item); item.parentFolder = folder; return item; }
         var background = reg(app.project.importFile(new ImportOptions(files[0])));
         var audio = reg(app.project.importFile(new ImportOptions(files[1])));
-        master = reg(app.project.items.addComp("EDIT_ME_1080x1920_15s",1080,1920,1,SETTINGS.duration,SETTINGS.fps));
+        master = reg(app.project.items.addComp("EDIT_ME_1080x1920_20s",1080,1920,1,SETTINGS.duration,SETTINGS.fps));
         master.workAreaStart = 0; master.workAreaDuration = SETTINGS.duration;
         master.motionBlur = true;
         function tr(l) { return l.property("ADBE Transform Group"); }
@@ -36,7 +36,7 @@
             p.setValueAtTime(a,[x+(mode===-1?-1100:mode===1?1100:0),y+(!mode?60:0)]);
             p.setValueAtTime(a+.38,[x,y]);
             var op=tr(l).property("ADBE Opacity");op.setValueAtTime(a,0);op.setValueAtTime(a+.20,100);
-            if(b<15){op.setValueAtTime(b-.10,100);op.setValueAtTime(b,0);}
+            if(b<20){op.setValueAtTime(b-.10,100);op.setValueAtTime(b,0);}
             for(var k=1;k<=p.numKeys;k++)p.setTemporalEaseAtKey(k,[new KeyframeEase(0,70)],[new KeyframeEase(0,70)]);
             l.motionBlur=true;
         }
@@ -49,11 +49,11 @@
         }
         var ink=[.145,.141,.286],blue=[.286,.561,.780],white=[1,1,1],yellow=[1,.875,.525];
         var dark=span(master.layers.addSolid([.075,.047,.18],"01 INTRO / editable background color",1080,1920,1,15),0,3.5);
-        var bg=span(master.layers.add(background),3.5,15);bg.name="02 ILLUSTRATION / replace image here";
+        var bg=span(master.layers.add(background),15,20);bg.name="02 ILLUSTRATION / replace image here";
         tr(bg).property("ADBE Position").setValue([540,960]);
         var cover=Math.max(1080/background.width,1920/background.height)*100;
-        tr(bg).property("ADBE Scale").setValueAtTime(3.5,[cover*1.10,cover*1.10]);
-        tr(bg).property("ADBE Scale").setValueAtTime(4.0,[cover,cover]);
+        tr(bg).property("ADBE Scale").setValueAtTime(15,[cover*1.10,cover*1.10]);
+        tr(bg).property("ADBE Scale").setValueAtTime(15.5,[cover,cover]);
         function shape(name,a,b,size,pos,color,ellipse) {
             var l=span(master.layers.addShape(),a,b);l.name=name;
             var group=l.property("ADBE Root Vectors Group").addProperty("ADBE Vector Group");
@@ -74,22 +74,61 @@
         text("01b 여기 봐","여기 봐!",.18,1.5,540,925,144,[.74,.92,1],1);
         text("02a 새로운 이야기","새로운 이야기가",1.5,3.5,540,720,84,white,1);
         text("02b 시작돼","시작돼",1.65,3.5,540,930,144,yellow,0);
-        text("03a 작은 만남","작은 만남,",3.5,6,615,560,84,ink,1);
-        text("03b 커다란 설렘","커다란 설렘",3.68,6,615,695,84,blue,-1);
-        text("03c 보조 문구","당신을 기다리는 이야기",3.85,6,615,868,38,ink,0);
-        text("04a 상상이","상상이",6,8.5,615,560,96,ink,0);
-        text("04b 움직이는 순간","움직이는 순간",6.14,8.5,615,695,78,blue,1);
-        text("04c 보조 문구","곧, 만나러 갑니다",6.3,8.5,615,868,38,ink,0);
-        text("05a 기억해 주세요","기억해 주세요",8.5,10,615,600,80,ink,0);
-        text("05b 우리 만나는 날","우리 만나는 날",8.65,10,615,735,72,blue,0);
-        text("EDIT TITLE / 작품명",SETTINGS.title,10,15,615,545,84,ink,1);
-        text("EDIT RELEASE / 개봉 문구",SETTINGS.release,10.2,15,615,690,90,blue,0);
-        text("EDIT DATE / 개봉일",SETTINGS.date,10.4,15,615,800,48,[.42,.44,.57],0);
-        text("EDIT CTA / 마지막 문구","극장에서 만나요",10.55,15,615,885,38,ink,0);
-        shape("CTA PILL / editable color",10,15,[480,84],[540,1662],ink,false);
-        text("COMING SOON","COMING SOON",10,15,540,1662,42,white,0);
-        var music=master.layers.add(audio);music.name="AUDIO / original rhythm (replace or mute)";span(music,0,15);
-        text("DRAFT LABEL / hide for export","MOTION TEASER · 시안",0,15,250,120,26,blue,0);
+        // Each source comp is a real, replaceable 16:9 video slot.
+        function slot(index,label,color) {
+            var comp=reg(app.project.items.addComp("VIDEO_0"+index+"_"+label+" / 영상은 여기에",960,540,1,20,30));
+            var path=new File(here.fsName+"/assets/clip0"+index+".mp4");
+            if(path.exists){
+                var footage=reg(app.project.importFile(new ImportOptions(path)));
+                var clip=comp.layers.add(footage);clip.name="REPLACE ME / "+label;clip.audioEnabled=false;
+                tr(clip).property("ADBE Position").setValue([480,270]);
+                var fit=Math.max(960/footage.width,540/footage.height)*100;
+                tr(clip).property("ADBE Scale").setValue([fit,fit]);
+                clip.outPoint=Math.min(20,footage.duration);
+            }else{
+                comp.layers.addSolid(color,"PLACEHOLDER / 실제 영상 아님",960,540,1,20);
+                var placeholder=comp.layers.addText(label+"\r영상 교체 영역");
+                var tp=placeholder.property("ADBE Text Properties").property("ADBE Text Document"),td=tp.value;
+                td.font=SETTINGS.font;td.fontSize=60;td.fillColor=[1,1,1];td.justification=ParagraphJustification.CENTER_JUSTIFY;tp.setValue(td);
+                tr(placeholder).property("ADBE Position").setValue([480,240]);
+            }
+            return comp;
+        }
+        var genres=["단편영화","다큐","홍보 영상"];
+        var colors=[[.20,.16,.38],[.10,.30,.35],[.37,.22,.20]];
+        var clips=[];
+        // Full-screen sequential clips, then all three gather into one screen.
+        span(master.layers.addSolid([.045,.035,.10],"MONTAGE BACKGROUND",1080,1920,1,20),3.5,15);
+        for(var v=0;v<3;v++){
+            clips[v]=slot(v+1,genres[v],colors[v]);
+            var begin=3.5+v*1.8,end=begin+1.8;
+            var single=span(master.layers.add(clips[v]),begin,end);
+            single.name="MONTAGE SOLO / "+genres[v];single.startTime=begin;span(single,begin,end);
+            tr(single).property("ADBE Position").setValue([540,920]);
+            tr(single).property("ADBE Scale").setValueAtTime(begin,[108,108]);
+            tr(single).property("ADBE Scale").setValueAtTime(end,[118,118]);
+            text("GENRE / "+genres[v],genres[v],begin,end,540,510,110,white,1);
+            text("GENRE SUB / "+genres[v],"하나의 스크린에서 만나는",begin,end,540,1370,44,[.73,.86,1],0);
+            var combined=master.layers.add(clips[v]);combined.name="MONTAGE TOGETHER / "+genres[v];combined.startTime=8.9;span(combined,8.9,15);
+            tr(combined).property("ADBE Position").setValueAtTime(8.9,[540+(v-1)*1200,880]);
+            tr(combined).property("ADBE Position").setValueAtTime(9.5,[540,530+v*450]);
+            tr(combined).property("ADBE Scale").setValue([80,80]);
+            text("TOGETHER LABEL / "+genres[v],genres[v],9.5,13,540,775+v*450,40,white,0);
+        }
+        text("MESSAGE 1","단편영화 · 다큐 · 홍보 영상",9.1,13,540,185,46,[.73,.86,1],0);
+        var dim=span(master.layers.addSolid([.04,.03,.09],"MESSAGE DIM / opacity",1080,1920,1,20),13,15);
+        tr(dim).property("ADBE Opacity").setValue(82);
+        text("MESSAGE 2 / 모두 영화관에서","이 모든 영상을,",13,15,540,790,90,white,-1);
+        text("MESSAGE 3 / 핵심 메시지","영화관에서",13.2,15,540,1000,132,yellow,1);
+        text("EDIT TITLE / 작품명",SETTINGS.title,15,20,615,545,84,ink,1);
+        text("EDIT RELEASE / 개봉 문구",SETTINGS.release,15.2,20,615,690,90,blue,0);
+        text("EDIT DATE / 개봉일",SETTINGS.date,15.4,20,615,800,48,[.42,.44,.57],0);
+        text("EDIT CTA / 마지막 문구","극장에서 만나요",15.55,20,615,885,38,ink,0);
+        shape("CTA PILL / editable color",15,20,[480,84],[540,1662],ink,false);
+        text("COMING SOON","COMING SOON",15,20,540,1662,42,white,0);
+        var music=master.layers.add(audio);music.name="AUDIO / original rhythm";span(music,0,15);
+        var tail=master.layers.add(audio);tail.name="AUDIO / loop continuation";tail.startTime=15;span(tail,15,20);
+        text("DRAFT LABEL / hide for export","MOTION TEASER · 시안",0,20,250,120,26,blue,0);
         var marker=new MarkerValue("자막: 텍스트 레이어 더블클릭 / 시간: 레이어 양 끝과 키프레임 이동 / 작품명·개봉일: EDIT 레이어 수정");
         master.markerProperty.setValueAtTime(0,marker);
         for(var n=0;n<expressions.length;n++){
