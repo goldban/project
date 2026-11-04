@@ -4,15 +4,15 @@
    Film still-life is a single background image; all typography remains editable. */
 (function () {
     var SETTINGS = {
-        title: "[ 작품명 ]",
-        release: "개봉일 입력",
-        date: "YYYY.MM.DD",
+        title: "첫단추",
+        release: "2026.11.26",
+        date: "극장 개봉",
         font: "NotoSansCJKkr-Bold",
         duration: 20,
         fps: 30
     };
     var here = new File($.fileName).parent;
-    var files = [new File(here.fsName + "/assets/background.png"), new File(here.fsName + "/assets/original-rhythm.wav")];
+    var files = [new File(here.fsName + "/assets/background.png"), new File(here.fsName + "/assets/original-rhythm.wav"), new File(here.fsName + "/assets/mascot.png")];
     for (var i = 0; i < files.length; i++) {
         if (!files[i].exists) { alert("전체 ZIP을 먼저 풀어주세요. 누락 파일: " + files[i].name); return; }
     }
@@ -25,6 +25,7 @@
         function reg(item) { created.push(item); item.parentFolder = folder; return item; }
         var background = reg(app.project.importFile(new ImportOptions(files[0])));
         var audio = reg(app.project.importFile(new ImportOptions(files[1])));
+        var mascot = reg(app.project.importFile(new ImportOptions(files[2])));
         master = reg(app.project.items.addComp("EDIT_ME_1080x1920_20s",1080,1920,1,SETTINGS.duration,SETTINGS.fps));
         master.workAreaStart = 0; master.workAreaDuration = SETTINGS.duration;
         master.motionBlur = true;
@@ -120,12 +121,37 @@
         tr(dim).property("ADBE Opacity").setValue(94);
         text("MESSAGE 2 / 모두 영화관에서","이 모든 영상을,",13,15,540,790,90,white,-1);
         text("MESSAGE 3 / 핵심 메시지","영화관에서",13.2,15,540,1000,132,yellow,1);
-        text("EDIT TITLE / 작품명",SETTINGS.title,15,20,540,410,84,ink,1);
-        text("EDIT RELEASE / 개봉 문구",SETTINGS.release,15.2,20,540,615,90,blue,0);
-        text("EDIT DATE / 개봉일",SETTINGS.date,15.4,20,540,770,48,[.42,.44,.57],0);
-        text("EDIT CTA / 마지막 문구","극장에서 만나요",15.55,20,540,990,38,ink,0);
-        shape("CTA PILL / editable color",15,20,[480,84],[540,1662],ink,false);
-        text("COMING SOON","COMING SOON",15,20,540,1662,42,[1,.94,.86],0);
+        // Title/date/sign/mascot remain independent editable layers.
+        var carrier=span(master.layers.addNull(20),15,20);carrier.name="CARRIER CONTROL / 팻말과 캐릭터 등장";
+        tr(carrier).property("ADBE Anchor Point").setValue([0,0]);
+        var cp=tr(carrier).property("ADBE Position");
+        cp.setValueAtTime(15,[0,1550]);cp.setValueAtTime(15.65,[0,-28]);cp.setValueAtTime(15.95,[0,0]);
+        for(var ck=1;ck<=cp.numKeys;ck++)cp.setTemporalEaseAtKey(ck,[new KeyframeEase(0,65)],[new KeyframeEase(0,65)]);
+        function attach(layer){layer.parent=carrier;return layer;}
+        var board=attach(shape("SIGNBOARD / 팻말 색상·크기",15,20,[850,600],[540,650],[1,.97,.90],false));
+        var boardContents=board.property("ADBE Root Vectors Group").property(1).property("ADBE Vectors Group");
+        boardContents.property("ADBE Vector Shape - Rect").property("ADBE Vector Rect Roundness").setValue(45);
+        var outline=boardContents.addProperty("ADBE Vector Graphic - Stroke");
+        outline.property("ADBE Vector Stroke Color").setValue([.49,.27,.15]);outline.property("ADBE Vector Stroke Width").setValue(16);
+        var character=span(master.layers.add(mascot),15,20);character.name="MASCOT / 캐릭터 위치·크기·교체";
+        // Visible alpha bounds are used for anchoring and uniform scaling.
+        tr(character).property("ADBE Anchor Point").setValue([630.0, 643.5]);
+        tr(character).property("ADBE Position").setValue([540,1190]);
+        tr(character).property("ADBE Scale").setValue([101.90217391304348,101.90217391304348]);attach(character);
+        // Set local position after parenting to preserve a shared carrier animation.
+        tr(character).property("ADBE Position").setValue([540,1190]);
+        var title=attach(text("EDIT TITLE / 작품명",SETTINGS.title,15,20,540,525,132,ink,0));
+        var release=attach(text("EDIT RELEASE / 개봉일",SETTINGS.release,15,20,540,705,94,blue,0));
+        var date=attach(text("EDIT DATE / 개봉 문구",SETTINGS.date,15,20,540,845,54,ink,0));
+        // Children use local static positions; parent supplies the shared entrance.
+        var fixedLayers=[board,title,release,date];
+        var fixedPositions=[[540,650],[540,525],[540,705],[540,845]];
+        for(var fi=0;fi<fixedLayers.length;fi++){
+            var fp=tr(fixedLayers[fi]).property("ADBE Position");
+            while(fp.numKeys>0)fp.removeKey(1);fp.setValue(fixedPositions[fi]);
+            var fo=tr(fixedLayers[fi]).property("ADBE Opacity");while(fo.numKeys>0)fo.removeKey(1);fo.setValue(100);
+        }
+        text("EDIT CTA / 마지막 문구","첫단추, 극장에서 만나요",16,20,540,1635,48,ink,0);
         var music=master.layers.add(audio);music.name="AUDIO / original rhythm";span(music,0,15);
         var tail=master.layers.add(audio);tail.name="AUDIO / loop continuation";tail.startTime=15;span(tail,15,20);
         text("DRAFT LABEL / hide for export","MOTION TEASER · 시안",0,20,250,120,26,blue,0);
