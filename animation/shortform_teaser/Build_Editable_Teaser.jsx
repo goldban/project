@@ -1,7 +1,7 @@
 #target aftereffects
 /* Extract the complete ZIP, run this file in After Effects, then Save As .aep.
    Text, timing, shapes, background transforms and audio are editable layers.
-   Character and wooden sign are contained in a single background illustration. */
+   Film still-life is a single background image; all typography remains editable. */
 (function () {
     var SETTINGS = {
         title: "[ 작품명 ]",
@@ -47,13 +47,13 @@
             expr(tr(l).property("ADBE Anchor Point"),'var r=sourceRectAtTime(time,false);[r.left+r.width/2,r.top+r.height/2];');
             motion(l,a,b,x,y,mode);return l;
         }
-        var ink=[.145,.141,.286],blue=[.286,.561,.780],white=[1,1,1],yellow=[1,.875,.525];
-        var dark=span(master.layers.addSolid([.075,.047,.18],"01 INTRO / editable background color",1080,1920,1,15),0,3.5);
-        var bg=span(master.layers.add(background),15,20);bg.name="02 ILLUSTRATION / replace image here";
+        var ink=[.27,.17,.14],blue=[.51,.18,.21],white=[.27,.17,.14],yellow=[.51,.18,.21];
+        
+        var bg=span(master.layers.add(background),0,20);bg.name="BACKGROUND / film photo - replace image here";
         tr(bg).property("ADBE Position").setValue([540,960]);
         var cover=Math.max(1080/background.width,1920/background.height)*100;
-        tr(bg).property("ADBE Scale").setValueAtTime(15,[cover*1.10,cover*1.10]);
-        tr(bg).property("ADBE Scale").setValueAtTime(15.5,[cover,cover]);
+        tr(bg).property("ADBE Scale").setValueAtTime(0,[cover*1.10,cover*1.10]);
+        tr(bg).property("ADBE Scale").setValueAtTime(3.5,[cover,cover]);
         function shape(name,a,b,size,pos,color,ellipse) {
             var l=span(master.layers.addShape(),a,b);l.name=name;
             var group=l.property("ADBE Root Vectors Group").addProperty("ADBE Vector Group");
@@ -63,7 +63,7 @@
             contents.addProperty("ADBE Vector Graphic - Fill").property("ADBE Vector Fill Color").setValue(color);
             tr(l).property("ADBE Position").setValue(pos);return l;
         }
-        var ribbon=shape("INTRO RIBBON / color + rotation",0,3.5,[1900,130],[540,1320],[.53,.80,.95],false);
+        var ribbon=shape("INTRO RIBBON / color + rotation",0,3.5,[1900,45],[540,1320],[.71,.42,.29],false);
         tr(ribbon).property("ADBE Rotate Z").setValue(-27);
         tr(ribbon).property("ADBE Position").setValueAtTime(0,[540,1500]);tr(ribbon).property("ADBE Position").setValueAtTime(3.5,[540,1050]);
         for(var j=0;j<7;j++){
@@ -71,7 +71,7 @@
             expr(tr(dot).property("ADBE Position"),'['+(85+j*149)+'+20*Math.sin(time*2+'+j+'),260+24*Math.cos(time*2+'+j+')];');
         }
         text("01a 잠깐","잠깐,",0,1.5,540,690,168,white,-1);
-        text("01b 여기 봐","여기 봐!",.18,1.5,540,925,144,[.74,.92,1],1);
+        text("01b 여기 봐","여기 봐!",.18,1.5,540,925,144,[.51,.18,.21],1);
         text("02a 새로운 이야기","새로운 이야기가",1.5,3.5,540,720,84,white,1);
         text("02b 시작돼","시작돼",1.65,3.5,540,930,144,yellow,0);
         // Each source comp is a real, replaceable 16:9 video slot.
@@ -95,10 +95,10 @@
             return comp;
         }
         var genres=["단편영화","다큐","홍보 영상"];
-        var colors=[[.20,.16,.38],[.10,.30,.35],[.37,.22,.20]];
+        var colors=[[.44,.22,.20],[.49,.36,.24],[.61,.40,.26]];
         var clips=[];
         // Full-screen sequential clips, then all three gather into one screen.
-        span(master.layers.addSolid([.045,.035,.10],"MONTAGE BACKGROUND",1080,1920,1,20),3.5,15);
+        // Film photograph remains visible behind the video slots.
         for(var v=0;v<3;v++){
             clips[v]=slot(v+1,genres[v],colors[v]);
             var begin=3.5+v*1.8,end=begin+1.8;
@@ -108,24 +108,24 @@
             tr(single).property("ADBE Scale").setValueAtTime(begin,[108,108]);
             tr(single).property("ADBE Scale").setValueAtTime(end,[118,118]);
             text("GENRE / "+genres[v],genres[v],begin,end,540,510,110,white,1);
-            text("GENRE SUB / "+genres[v],"하나의 스크린에서 만나는",begin,end,540,1370,44,[.73,.86,1],0);
+            text("GENRE SUB / "+genres[v],"하나의 스크린에서 만나는",begin,end,540,1370,44,[.44,.27,.23],0);
             var combined=master.layers.add(clips[v]);combined.name="MONTAGE TOGETHER / "+genres[v];combined.startTime=8.9;span(combined,8.9,15);
             tr(combined).property("ADBE Position").setValueAtTime(8.9,[540+(v-1)*1200,880]);
             tr(combined).property("ADBE Position").setValueAtTime(9.5,[540,530+v*450]);
             tr(combined).property("ADBE Scale").setValue([80,80]);
             text("TOGETHER LABEL / "+genres[v],genres[v],9.5,13,540,775+v*450,40,white,0);
         }
-        text("MESSAGE 1","단편영화 · 다큐 · 홍보 영상",9.1,13,540,185,46,[.73,.86,1],0);
-        var dim=span(master.layers.addSolid([.04,.03,.09],"MESSAGE DIM / opacity",1080,1920,1,20),13,15);
-        tr(dim).property("ADBE Opacity").setValue(82);
+        text("MESSAGE 1","단편영화 · 다큐 · 홍보 영상",9.1,13,540,185,46,[.44,.27,.23],0);
+        var dim=span(master.layers.addSolid([1,.94,.86],"MESSAGE LIGHT / opacity",1080,1920,1,20),13,15);
+        tr(dim).property("ADBE Opacity").setValue(94);
         text("MESSAGE 2 / 모두 영화관에서","이 모든 영상을,",13,15,540,790,90,white,-1);
         text("MESSAGE 3 / 핵심 메시지","영화관에서",13.2,15,540,1000,132,yellow,1);
-        text("EDIT TITLE / 작품명",SETTINGS.title,15,20,615,545,84,ink,1);
-        text("EDIT RELEASE / 개봉 문구",SETTINGS.release,15.2,20,615,690,90,blue,0);
-        text("EDIT DATE / 개봉일",SETTINGS.date,15.4,20,615,800,48,[.42,.44,.57],0);
-        text("EDIT CTA / 마지막 문구","극장에서 만나요",15.55,20,615,885,38,ink,0);
+        text("EDIT TITLE / 작품명",SETTINGS.title,15,20,540,410,84,ink,1);
+        text("EDIT RELEASE / 개봉 문구",SETTINGS.release,15.2,20,540,615,90,blue,0);
+        text("EDIT DATE / 개봉일",SETTINGS.date,15.4,20,540,770,48,[.42,.44,.57],0);
+        text("EDIT CTA / 마지막 문구","극장에서 만나요",15.55,20,540,990,38,ink,0);
         shape("CTA PILL / editable color",15,20,[480,84],[540,1662],ink,false);
-        text("COMING SOON","COMING SOON",15,20,540,1662,42,white,0);
+        text("COMING SOON","COMING SOON",15,20,540,1662,42,[1,.94,.86],0);
         var music=master.layers.add(audio);music.name="AUDIO / original rhythm";span(music,0,15);
         var tail=master.layers.add(audio);tail.name="AUDIO / loop continuation";tail.startTime=15;span(tail,15,20);
         text("DRAFT LABEL / hide for export","MOTION TEASER · 시안",0,20,250,120,26,blue,0);
@@ -136,7 +136,7 @@
             if(expressions[n].expressionError)throw new Error(expressions[n].expressionError);
         }
         master.openInViewer();
-        alert("편집 가능한 컴포지션을 만들었습니다.\nEDIT 레이어에서 작품명·개봉일을 바꾸세요.\n파일 > 다른 이름으로 저장으로 .aep를 저장하세요.\n캐릭터와 팻말은 한 장의 이미지이며 파츠 리깅은 아닙니다.");
+        alert("편집 가능한 컴포지션을 만들었습니다.\nEDIT 레이어에서 작품명·개봉일을 바꾸세요.\n파일 > 다른 이름으로 저장으로 .aep를 저장하세요.\n배경은 필름 사진 한 장이며 자막과 영상 슬롯은 개별 편집 가능합니다.");
     } catch(e) {
         for(var c=created.length-1;c>=0;c--){try{created[c].remove();}catch(ignore){}}
         alert("생성 실패: "+e.toString());

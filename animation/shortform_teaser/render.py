@@ -4,7 +4,7 @@ from pathlib import Path
 P=Path(__file__).resolve().parent; W,H=720,1280; FPS=30; DUR=15
 font='/usr/share/fonts/opentype/noto/NotoSansCJK-Bold.ttc'
 fonts={s:ImageFont.truetype(font,s,index=1) for s in [20,24,28,32,38,48,56,64,72,84,96,112]}
-bg=Image.open(P/'assets/background.png').convert('RGB').resize((W,H),Image.Resampling.LANCZOS)
+bg=Image.open(P/'assets/background_character.png').convert('RGB').resize((W,H),Image.Resampling.LANCZOS)
 y,x=np.mgrid[:H,:W]; glow=np.exp(-(((x-360)/450)**2+((y-600)/650)**2))
 dark=np.stack([15+44*glow,12+15*glow,38+68*glow],2).astype('uint8'); dark=Image.fromarray(dark)
 def ease(v): return 1-(1-max(0,min(1,v)))**3
