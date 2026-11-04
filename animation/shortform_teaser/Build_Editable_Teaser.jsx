@@ -8,11 +8,11 @@
         release: "2026.11.26",
         date: "극장 개봉",
         font: "NotoSansCJKkr-Bold",
-        duration: 20,
+        duration: 25,
         fps: 30
     };
     var here = new File($.fileName).parent;
-    var files = [new File(here.fsName + "/assets/background.png"), new File(here.fsName + "/assets/original-rhythm.wav"), new File(here.fsName + "/assets/mascot.png")];
+    var files = [new File(here.fsName + "/assets/background.png"), new File(here.fsName + "/assets/university-rhythm.wav"), new File(here.fsName + "/assets/mascot.png")];
     for (var i = 0; i < files.length; i++) {
         if (!files[i].exists) { alert("전체 ZIP을 먼저 풀어주세요. 누락 파일: " + files[i].name); return; }
     }
@@ -26,7 +26,7 @@
         var background = reg(app.project.importFile(new ImportOptions(files[0])));
         var audio = reg(app.project.importFile(new ImportOptions(files[1])));
         var mascot = reg(app.project.importFile(new ImportOptions(files[2])));
-        master = reg(app.project.items.addComp("EDIT_ME_1080x1920_20s",1080,1920,1,SETTINGS.duration,SETTINGS.fps));
+        master = reg(app.project.items.addComp("EDIT_ME_1080x1920_25s",1080,1920,1,SETTINGS.duration,SETTINGS.fps));
         master.workAreaStart = 0; master.workAreaDuration = SETTINGS.duration;
         master.motionBlur = true;
         function tr(l) { return l.property("ADBE Transform Group"); }
@@ -64,17 +64,18 @@
             contents.addProperty("ADBE Vector Graphic - Fill").property("ADBE Vector Fill Color").setValue(color);
             tr(l).property("ADBE Position").setValue(pos);return l;
         }
-        var ribbon=shape("INTRO RIBBON / color + rotation",0,3.5,[1900,45],[540,1320],[.71,.42,.29],false);
-        tr(ribbon).property("ADBE Rotate Z").setValue(-27);
-        tr(ribbon).property("ADBE Position").setValueAtTime(0,[540,1500]);tr(ribbon).property("ADBE Position").setValueAtTime(3.5,[540,1050]);
-        for(var j=0;j<7;j++){
-            var dot=shape("ACCENT "+(j+1),0,10,[12+(j%3)*4,12+(j%3)*4],[85+j*149,260],yellow,true);
-            expr(tr(dot).property("ADBE Position"),'['+(85+j*149)+'+20*Math.sin(time*2+'+j+'),260+24*Math.cos(time*2+'+j+')];');
+        var tileColors=[[.51,.18,.21],[.78,.61,.47],[.29,.20,.19],[.91,.81,.70],[0,.62,.89],[.87,0,.49]];
+        for(var row=0;row<7;row++)for(var col=0;col<5;col++){
+            var tile=shape("INTRO TILE / "+row+"-"+col,0,3.5,[200,260],[(col+.5)*216,(row+.5)*276],tileColors[(row+col)%6],false);
+            var tt=tr(tile),lag=((row*5+col)%7)*.055;
+            tt.property("ADBE Position").setValueAtTime(lag,[(col+.5)*216+(col-2)*500,(row+.5)*276+(row-3)*360]);
+            tt.property("ADBE Position").setValueAtTime(lag+1.4,[(col+.5)*216,(row+.5)*276]);
+            tt.property("ADBE Scale").setValueAtTime(lag,[8,120]);tt.property("ADBE Scale").setValueAtTime(lag+1.4,[100,100]);
+            tt.property("ADBE Rotate Z").setValueAtTime(lag,(row-col)*12);tt.property("ADBE Rotate Z").setValueAtTime(lag+1.4,0);tile.motionBlur=true;
         }
-        text("01a 잠깐","잠깐,",0,1.5,540,690,168,white,-1);
-        text("01b 여기 봐","여기 봐!",.18,1.5,540,925,144,[.51,.18,.21],1);
-        text("02a 새로운 이야기","새로운 이야기가",1.5,3.5,540,720,84,white,1);
-        text("02b 시작돼","시작돼",1.65,3.5,540,930,144,yellow,0);
+        var introDim=span(master.layers.addSolid([.06,.04,.08],"INTRO CONTRAST / opacity",1080,1920,1,25),0,3.5);tr(introDim).property("ADBE Opacity").setValue(36);
+        text("INTRO MESSAGE 1","다채로운 이야기가",.8,3.5,540,780,72,[1,.96,.90],1);
+        text("INTRO MESSAGE 2","하나의 스크린으로",1.4,3.5,540,980,84,[1,.96,.90],0);
         // Each source comp is a real, replaceable 16:9 video slot.
         function slot(index,label,color) {
             var comp=reg(app.project.items.addComp("VIDEO_0"+index+"_"+label+" / 영상은 여기에",960,540,1,20,30));
@@ -152,9 +153,29 @@
             var fo=tr(fixedLayers[fi]).property("ADBE Opacity");while(fo.numKeys>0)fo.removeKey(1);fo.setValue(100);
         }
         text("EDIT CTA / 마지막 문구","첫단추, 극장에서 만나요",16,20,540,1635,48,ink,0);
-        var music=master.layers.add(audio);music.name="AUDIO / original rhythm";span(music,0,15);
-        var tail=master.layers.add(audio);tail.name="AUDIO / loop continuation";tail.startTime=15;span(tail,15,20);
+        var music=master.layers.add(audio);music.name="AUDIO / original rhythm";span(music,0,25);
+
         text("DRAFT LABEL / hide for export","MOTION TEASER · 시안",0,20,250,120,26,blue,0);
+        // University end card: native editable vector paths, not a flattened logo movie.
+        span(master.layers.addSolid([1,.973,.933],"END CARD / background color",1080,1920,1,25),20,25);
+        function logoPart(name,points,color,start,delta){
+            var layer=span(master.layers.addShape(),20,25);layer.name=name;
+            var group=layer.property("ADBE Root Vectors Group").addProperty("ADBE Vector Group");
+            var contents=group.property("ADBE Vectors Group");var path=contents.addProperty("ADBE Vector Shape - Group");
+            var sh=new Shape();sh.vertices=[];sh.inTangents=[];sh.outTangents=[];sh.closed=true;
+            for(var pi=0;pi<points.length;pi++){sh.vertices.push([(points[pi][0]-683)*.42,(points[pi][1]-576)*.42]);sh.inTangents.push([0,0]);sh.outTangents.push([0,0]);}
+            path.property("ADBE Vector Shape").setValue(sh);
+            contents.addProperty("ADBE Vector Graphic - Fill").property("ADBE Vector Fill Color").setValue(color);
+            var pos=tr(layer).property("ADBE Position");pos.setValueAtTime(start,[540+delta[0],750+delta[1]]);pos.setValueAtTime(start+1.25,[540,750]);
+            for(var pk=1;pk<=pos.numKeys;pk++)pos.setTemporalEaseAtKey(pk,[new KeyframeEase(0,70)],[new KeyframeEase(0,70)]);
+            layer.motionBlur=true;return layer;
+        }
+        logoPart("LOGO CYAN / editable path",[[230,0],[1320,0],[775,545]],[0,.624,.89],20,[-900,-750]);
+        logoPart("LOGO MAGENTA / editable path",[[0,40],[547,587],[0,1118]],[.894,0,.498],20.13,[-1200,300]);
+        logoPart("LOGO DARK / editable path",[[1366,70],[1366,1152],[323,1152]],[.165,.11,.094],20.26,[1200,975]);
+        text("EDIT UNIVERSITY / 학교명","용인예술과학대학교",21,25,540,1145,78,[.165,.11,.094],1);
+        text("END TITLE / 첫단추",SETTINGS.title,21.7,25,540,1290,54,blue,0);
+        text("END RELEASE / 개봉일",SETTINGS.release+"  극장 개봉",21.7,25,540,1400,42,ink,0);
         var marker=new MarkerValue("자막: 텍스트 레이어 더블클릭 / 시간: 레이어 양 끝과 키프레임 이동 / 작품명·개봉일: EDIT 레이어 수정");
         master.markerProperty.setValueAtTime(0,marker);
         for(var n=0;n<expressions.length;n++){
