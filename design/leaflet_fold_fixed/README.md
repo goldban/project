@@ -1,5 +1,14 @@
 # 3단 리플렛 접지 수정본
 
+## 압축 없이 PSD 직접 다운로드
+
+아래 파일을 각각 다운로드하세요. 압축 해제가 필요 없습니다.
+
+- [안쪽면 PSD: INSIDE_84-87-87.psd](https://github.com/goldban/project/raw/refs/heads/main/design/leaflet_fold_fixed/INSIDE_84-87-87.psd)
+- [겉면 PSD: OUTSIDE_87-87-84.psd](https://github.com/goldban/project/raw/refs/heads/main/design/leaflet_fold_fixed/OUTSIDE_87-87-84.psd)
+
+다운로드한 파일은 바탕화면 또는 일반 폴더에 저장한 뒤 Photoshop에서 열어 주세요. 두 PSD는 아래 일반 ZIP에 담긴 수정 PSD와 동일합니다. 수정 화면은 칸별 합성 패널이며, 원본 편집 레이어는 아래 별도 백업에 있습니다.
+
 ## PSD 다운로드 — Windows 일반 ZIP
 
 [**수정 PSD 다운로드: leaflet_windows.zip**](https://github.com/goldban/project/raw/refs/heads/main/design/leaflet_fold_fixed/leaflet_windows.zip)
