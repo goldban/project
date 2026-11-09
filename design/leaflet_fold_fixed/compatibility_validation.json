@@ -1,0 +1,44 @@
+[
+  {
+    "file": "INSIDE_84-87-87_compatible.psd",
+    "bytes": 52199402,
+    "pixels": [
+      3508,
+      2480
+    ],
+    "native_raster_layers": 3,
+    "format": "PSD v1 / 8-bit RGB / uncompressed",
+    "independent_decoders": [
+      "ImageMagick",
+      "Pillow",
+      "psd-tools"
+    ],
+    "image_matches_previous_design_exactly": true,
+    "folds_mm": [
+      84,
+      171
+    ],
+    "adobe_photoshop_execution_tested": false
+  },
+  {
+    "file": "OUTSIDE_87-87-84_compatible.psd",
+    "bytes": 9438393,
+    "pixels": [
+      1491,
+      1055
+    ],
+    "native_raster_layers": 3,
+    "format": "PSD v1 / 8-bit RGB / uncompressed",
+    "independent_decoders": [
+      "ImageMagick",
+      "Pillow",
+      "psd-tools"
+    ],
+    "image_matches_previous_design_exactly": true,
+    "folds_mm": [
+      87,
+      174
+    ],
+    "adobe_photoshop_execution_tested": false
+  }
+]

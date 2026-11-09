@@ -1,5 +1,19 @@
 # 3단 리플렛 접지 수정본
 
+## Photoshop 열기 오류 수정본
+
+이전 `INSIDE_84-87-87.psd`에서 Photoshop 프로그램 오류가 보고되어, 복잡한 원본 부가 정보를 제거한 표준 PSD v1로 다시 저장했습니다. **아래 `_compatible` 파일을 사용하세요.**
+
+- [안쪽면 호환 PSD](https://github.com/goldban/project/raw/refs/heads/main/design/leaflet_fold_fixed/INSIDE_84-87-87_compatible.psd)
+- [겉면 호환 PSD](https://github.com/goldban/project/raw/refs/heads/main/design/leaflet_fold_fixed/OUTSIDE_87-87-84_compatible.psd)
+- [안쪽면 TIFF](https://github.com/goldban/project/raw/refs/heads/main/design/leaflet_fold_fixed/INSIDE_84-87-87_compatible.tif)
+- [겉면 TIFF](https://github.com/goldban/project/raw/refs/heads/main/design/leaflet_fold_fixed/OUTSIDE_87-87-84_compatible.tif)
+
+새 PSD는 8비트 RGB, 비압축 PSD v1, 칸별 합성 패널 3개와 비인쇄 접지 가이드로 구성됩니다. 원본 텍스트 레이어는 아래 별도 원본 백업에 있습니다. TIFF는 레이어·가이드 없는 단일 합성 이미지입니다. 디자인과 픽셀 크기는 바꾸지 않았습니다.
+
+Pillow, ImageMagick, psd-tools로 새 PSD의 합성 화면을 열어 원본 수정 디자인과 픽셀 일치를 확인했고, TIFF 화면도 비교했습니다. **Adobe Photoshop 자체 실행은 미검증**입니다. 기존 PSD 파일과 기존 ZIP은 호환성 문제 수정 전 버전입니다.
+
+
 ## 압축 없이 PSD 직접 다운로드
 
 아래 파일을 각각 다운로드하세요. 압축 해제가 필요 없습니다.
