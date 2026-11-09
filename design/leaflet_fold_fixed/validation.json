@@ -1,0 +1,58 @@
+[
+  {
+    "file": "팜플렛_앞면_안쪽_84-87-87.psd",
+    "pixels": [
+      3508,
+      2480
+    ],
+    "width_mm": 258,
+    "height_mm": 182.3945267958951,
+    "panels_mm": [
+      84,
+      87,
+      87
+    ],
+    "fold_mm": [
+      84,
+      171
+    ],
+    "observed_guide_mm": [
+      83.99893192393571,
+      170.99946735812262
+    ],
+    "original_descendant_layers": 89,
+    "original_layers_preserved_hidden": true,
+    "visible_panels": "raster composite; original editable layers archived",
+    "full_image_roundtrip_exact": true,
+    "bleed_added": false,
+    "original_sha256": "08270d6c2cada6936ffc921b08320944f369b3501ecad611e19870a2a83612ca"
+  },
+  {
+    "file": "팜플렛_뒷면_겉면_87-87-84.psd",
+    "pixels": [
+      1491,
+      1055
+    ],
+    "width_mm": 258,
+    "height_mm": 182.5553319919517,
+    "panels_mm": [
+      87,
+      87,
+      84
+    ],
+    "fold_mm": [
+      87,
+      174
+    ],
+    "observed_guide_mm": [
+      87.00037503418686,
+      174.00075006837372
+    ],
+    "original_descendant_layers": 12,
+    "original_layers_preserved_hidden": true,
+    "visible_panels": "raster composite; original editable layers archived",
+    "full_image_roundtrip_exact": true,
+    "bleed_added": false,
+    "original_sha256": "9ac7c1a4cd2d468937566fbddf5713b2149558e62fb0c1c3fe4e4fe552574f5b"
+  }
+]
