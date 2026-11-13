@@ -1,0 +1,67 @@
+{
+  "W": 3047,
+  "H": 2157,
+  "dpi": 299.97596899224806,
+  "folds_mm": [
+    87,
+    174
+  ],
+  "folds_px": [
+    1027.4767441860465,
+    2054.953488372093
+  ],
+  "centers_px": {
+    "middle": 1541.2151162790697,
+    "cover": 2550.9767441860467
+  },
+  "texts": [
+    {
+      "name": "04 EDIT Middle message",
+      "text": "우리의 시작, 그리고 오래 기억될 장면",
+      "center": 1541.2151162790697,
+      "baseline": 1210,
+      "fontSize": 83.40445156076646,
+      "font": "NanumBrush"
+    },
+    {
+      "name": "05 EDIT Main title",
+      "text": "첫단추",
+      "center": 2550.9767441860467,
+      "baseline": 655,
+      "fontSize": 400,
+      "font": "NanumBrush"
+    },
+    {
+      "name": "06 EDIT Tagline",
+      "text": "지금, 우리의 첫 단추가 시작된다",
+      "center": 2550.9767441860467,
+      "baseline": 798,
+      "fontSize": 83,
+      "font": "NanumBrush"
+    },
+    {
+      "name": "07 EDIT University department",
+      "text": "용인예술과학대학교 방송영화제작과",
+      "center": 2550.9767441860467,
+      "baseline": 866,
+      "fontSize": 37,
+      "font": "NanumMyeongjo"
+    },
+    {
+      "name": "08 EDIT Screening label",
+      "text": "졸업 작품 시사회",
+      "center": 2550.9767441860467,
+      "baseline": 913,
+      "fontSize": 37,
+      "font": "NanumMyeongjo"
+    },
+    {
+      "name": "09 EDIT Date and venue",
+      "text": "2026년 11월 26일 CGV 기흥",
+      "center": 2550.9767441860467,
+      "baseline": 1982,
+      "fontSize": 45,
+      "font": "NanumMyeongjo"
+    }
+  ]
+}

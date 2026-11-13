@@ -1,0 +1,38 @@
+{
+  "source": "Uploaded 리플렛 겉면.psd",
+  "source_layer_count": 0,
+  "source_flattened": true,
+  "original_pixel_dimensions": [
+    3047,
+    2157
+  ],
+  "width_mm": 258,
+  "panel_widths_mm": [
+    87,
+    87,
+    84
+  ],
+  "folds_px": [
+    1027.4767441860465,
+    2054.953488372093
+  ],
+  "centers_px": {
+    "middle": 1541.2151162790697,
+    "cover": 2550.9767441860467
+  },
+  "native_editable_text_layers": 6,
+  "layer_count": 11,
+  "fonts_included": [
+    "NanumBrushScript-Regular.ttf",
+    "NanumMyeongjo-Regular.ttf"
+  ],
+  "background_and_camera_reconstructed": true,
+  "left_event_information_is_original_raster": true,
+  "hidden_original_raster_layer": true,
+  "independent_psd_decoders": [
+    "ag-psd",
+    "psd-tools",
+    "ImageMagick"
+  ],
+  "adobe_photoshop_execution_tested": false
+}
