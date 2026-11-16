@@ -1,5 +1,7 @@
 # 안쪽면 식순 — 다큐멘터리 제목 수정
 
+**참고 글자 스타일에 맞춘 최신 수정본은 [글자 스타일 수정본](../inside_titles_font_match)에 있습니다.**
+
 - [**편집용 PSD 다운로드**](https://github.com/goldban/project/raw/refs/heads/main/design/inside_titles_corrected/INSIDE_TITLES_CORRECTED_EDITABLE.psd)
 - [단순 호환 PSD 다운로드](https://github.com/goldban/project/raw/refs/heads/main/design/inside_titles_corrected/INSIDE_TITLES_CORRECTED_SIMPLE.psd)
 - [TIFF 다운로드](https://github.com/goldban/project/raw/refs/heads/main/design/inside_titles_corrected/INSIDE_TITLES_CORRECTED.tif)

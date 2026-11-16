@@ -1,0 +1,25 @@
+{
+  "font": "NotoSerifCJKkr-Bold",
+  "fontSize": 48,
+  "outlinePixels": 2,
+  "newListItems": 3,
+  "originalFontIdentityKnown": false,
+  "pixels": [
+    3508,
+    2480
+  ],
+  "foldsMm": [
+    87,
+    174
+  ],
+  "adobePhotoshopExecutionTested": false,
+  "psdBytes": 99819211,
+  "baselinePsdBytes": 52199378,
+  "nativeTypeLayersAfterCompression": 28,
+  "mainMergedCompression": "1",
+  "baselineHasNoTextOrSmartObjectRecords": true,
+  "baselinePixelsMatch": true,
+  "requestedTitlesVerified": true,
+  "fontFilePostscriptNameVerified": true,
+  "independentPSDParserPassed": true
+}
