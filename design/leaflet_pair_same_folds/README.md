@@ -1,5 +1,11 @@
 # 양면 리플렛 — 같은 접지 좌표로 통일한 요청 버전
 
+## 안쪽면 PSD 열기 오류 재저장본
+
+[편집용 PSD 직접 다운로드](https://github.com/goldban/project/raw/refs/heads/main/design/inside_open_fix/INSIDE_87-87-84_OPEN_FIX_EDITABLE.psd) · [단순 호환 PSD](https://github.com/goldban/project/raw/refs/heads/main/design/inside_open_fix/INSIDE_87-87-84_SIMPLE.psd)
+
+Photoshop에서 이전 안쪽면을 열지 못한 경우 위 재저장본을 사용하세요. [자세한 안내](../inside_open_fix).
+
 ## 다운로드
 
 - [**겉면 PSD 다운로드**](https://github.com/goldban/project/raw/refs/heads/main/design/leaflet_pair_same_folds/OUTSIDE_87-87-84_SAME_FOLDS.psd)

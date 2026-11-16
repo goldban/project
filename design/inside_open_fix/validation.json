@@ -1,0 +1,37 @@
+{
+  "pixels": [
+    3508,
+    2480
+  ],
+  "mm": [
+    258,
+    182.3945267958951
+  ],
+  "foldsMm": [
+    87,
+    174
+  ],
+  "nativeTextLayers": 25,
+  "smartObjects": 2,
+  "removedHiddenArchiveGroups": 1,
+  "removedArchivePreservedInPreviousVersion": true,
+  "oldTotalLeafLayers": 80,
+  "newTotalLeafLayers": 41,
+  "psdBytes": 99627216,
+  "adobePhotoshopExecutionTested": false,
+  "baselinePsdBytes": 52199378,
+  "nativeTypeLayersAfterCompression": 25,
+  "mainMergedCompression": "1",
+  "baselineHasNoTextOrSmartObjectRecords": true,
+  "baselinePixelsMatch": true,
+  "opaqueCompositePixelsMatchPreviousVersionExactly": true,
+  "transparentEdgeRoundingMax8BitDifference": 2,
+  "transparentEdgePixelsChanged": 11663,
+  "foldGuidesUnchanged": true,
+  "smartObjectDataUnchanged": true,
+  "independentDecoders": [
+    "psd-tools",
+    "Pillow (baseline)",
+    "ImageMagick"
+  ]
+}
