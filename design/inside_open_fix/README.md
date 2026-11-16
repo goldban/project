@@ -1,5 +1,7 @@
 # 안쪽면 PSD 열기 문제 — 재저장본과 단순 호환본
 
+**다큐멘터리 목록 제목을 수정한 최신 파일은 [제목 수정본 폴더](../inside_titles_corrected)에 있습니다.**
+
 ## 압축 해제 없이 바로 다운로드
 
 - [**편집용 PSD 다운로드**](https://github.com/goldban/project/raw/refs/heads/main/design/inside_open_fix/INSIDE_87-87-84_OPEN_FIX_EDITABLE.psd)
