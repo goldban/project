@@ -1,5 +1,7 @@
 # 다큐멘터리 목록 — 참고 글자 스타일에 맞춘 수정본
 
+**이 편집용 PSD는 Photoshop 프로그램 오류가 보고되었습니다. [TIFF·단순 PSD와 Photoshop 자체 생성 스크립트 안내](../inside_native_builder)를 우선 사용하세요.**
+
 - [**편집용 PSD 다운로드**](https://github.com/goldban/project/raw/refs/heads/main/design/inside_titles_font_match/INSIDE_FONT_MATCH_EDITABLE.psd)
 - [단순 호환 PSD 다운로드](https://github.com/goldban/project/raw/refs/heads/main/design/inside_titles_font_match/INSIDE_FONT_MATCH_SIMPLE.psd)
 - [TIFF 다운로드](https://github.com/goldban/project/raw/refs/heads/main/design/inside_titles_font_match/INSIDE_FONT_MATCH.tif)
