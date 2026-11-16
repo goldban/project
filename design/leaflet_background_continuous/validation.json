@@ -1,0 +1,26 @@
+{
+  "width": 3508,
+  "height": 2480,
+  "panelWidthsMm": [
+    84,
+    87,
+    87
+  ],
+  "foldsMm": [
+    84,
+    171
+  ],
+  "layers": 15,
+  "nativeTextLayers": 4,
+  "smartObjects": 2,
+  "backgroundRetouchSeparateLayer": true,
+  "protectedContentSamplesChecked": 216227,
+  "protectedPixelMismatches": 0,
+  "retouchedPixelCount": 4578034,
+  "adobePhotoshopExecutionTested": false,
+  "independentPSDReadbackExact": true,
+  "allOriginalLayerBoundsAndVisibilityPreserved": true,
+  "nativeTextContentsAndTransformsUnchanged": true,
+  "embeddedSmartObjectDataUnchanged": true,
+  "foldGuidesUnchanged": true
+}
