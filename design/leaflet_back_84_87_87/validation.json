@@ -1,0 +1,43 @@
+{
+  "source": "팜플렛 뒷면.psd uploaded 2026-11-16",
+  "sourcePixels": [
+    1491,
+    1055
+  ],
+  "outputPixels": [
+    3508,
+    2480
+  ],
+  "outputPhysicalMm": [
+    258,
+    182.3945267958951
+  ],
+  "panelWidthsMm": [
+    84,
+    87,
+    87
+  ],
+  "foldsMm": [
+    84,
+    171
+  ],
+  "nativeTextLayers": 4,
+  "visibleNativeTextLayers": 3,
+  "smartObjects": 2,
+  "embeddedSmartObjectContentsPreserved": true,
+  "outputLayerCount": 14,
+  "originalFonts": [
+    "Griun_Simsimche-Rg",
+    "HancomUljuBangudaePetroglyph"
+  ],
+  "adobePhotoshopExecutionTested": false,
+  "sourcePixelsUpscaledWithoutNewDetail": true,
+  "verifiedGuideMm": [
+    83.99893192393571,
+    170.99946735812262
+  ],
+  "independentDecoder": "psd-tools",
+  "exactCompositeReadback": true,
+  "linkedReferencePixelSizeMatches": true,
+  "tiffReadbackExact": true
+}
