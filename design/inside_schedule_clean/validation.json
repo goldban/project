@@ -1,0 +1,25 @@
+{
+  "pixels": [
+    3508,
+    2480
+  ],
+  "mm": [
+    258,
+    182.3945267958951
+  ],
+  "foldsMm": [
+    87,
+    174
+  ],
+  "fontFamilyUnified": "Noto Serif CJK KR",
+  "titlePx": 88,
+  "headingPx": 58,
+  "bodyPx": 46,
+  "bodyBaselineSpacingPx": 60,
+  "nativeTextItemsCreatedByPhotoshopScript": 22,
+  "flatPsdHasNoTextOrEffects": true,
+  "flatPsdAndTiffPixelsVerified": true,
+  "allTextInSafeMargin": true,
+  "adobePhotoshopExecutionTested": false,
+  "onlyLeftSchedulePanelReorganized": true
+}
