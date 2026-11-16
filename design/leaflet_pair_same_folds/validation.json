@@ -1,0 +1,112 @@
+[
+  {
+    "side": "outside",
+    "filename": "OUTSIDE_87-87-84_SAME_FOLDS.psd",
+    "sourcePixels": [
+      6094,
+      4309
+    ],
+    "outputPixels": [
+      3508,
+      2480
+    ],
+    "outputMm": [
+      258,
+      182.3945267958951
+    ],
+    "sourceColorMode": 4,
+    "colorModeAndICCUnchanged": true,
+    "panelWidthsMm": [
+      87,
+      87,
+      84
+    ],
+    "guidesMm": [
+      87,
+      174
+    ],
+    "nativeTypeLayersPreserved": 4,
+    "nativeSmartObjectsPreserved": 2,
+    "backgroundSmartObjectsRasterized": [],
+    "originalLayerCounts": {
+      "type": 4,
+      "smartobject": 2,
+      "pixel": 9
+    },
+    "outputLayerCounts": {
+      "type": 4,
+      "smartobject": 2,
+      "pixel": 9
+    },
+    "fileBytes": 47367227,
+    "actualPhotoshopExecutionTested": false,
+    "measuredGuideMm": [
+      87.0005354341869,
+      174.0010708683738
+    ],
+    "mergedCacheCompression": "RLE - widely compatible",
+    "tiffMode": "CMYK",
+    "tiffReadbackExact": true,
+    "mirroredGuideCorrespondenceMm": [
+      84,
+      171
+    ],
+    "conditionalMirroredGuideMismatchMm": 3
+  },
+  {
+    "side": "inside",
+    "filename": "INSIDE_87-87-84_SAME_FOLDS.psd",
+    "sourcePixels": [
+      3508,
+      2480
+    ],
+    "outputPixels": [
+      3508,
+      2480
+    ],
+    "outputMm": [
+      258,
+      182.3945267958951
+    ],
+    "sourceColorMode": 3,
+    "colorModeAndICCUnchanged": true,
+    "panelWidthsMm": [
+      87,
+      87,
+      84
+    ],
+    "guidesMm": [
+      87,
+      174
+    ],
+    "nativeTypeLayersPreserved": 50,
+    "nativeSmartObjectsPreserved": 2,
+    "backgroundSmartObjectsRasterized": [
+      "미니멀 영화제 브로슈어 식순 배경"
+    ],
+    "originalLayerCounts": {
+      "type": 50,
+      "smartobject": 3,
+      "pixel": 27
+    },
+    "outputLayerCounts": {
+      "type": 50,
+      "smartobject": 2,
+      "pixel": 28
+    },
+    "fileBytes": 111478107,
+    "actualPhotoshopExecutionTested": false,
+    "measuredGuideMm": [
+      87.0005354341869,
+      174.0010708683738
+    ],
+    "mergedCacheCompression": "RLE - widely compatible",
+    "tiffMode": "RGBA",
+    "tiffReadbackExact": true,
+    "mirroredGuideCorrespondenceMm": [
+      84,
+      171
+    ],
+    "conditionalMirroredGuideMismatchMm": 3
+  }
+]
