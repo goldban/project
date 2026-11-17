@@ -1,0 +1,67 @@
+{
+  "sourceFile": "다큐 2조 안녕.psd",
+  "sourceBytes": 1126306504,
+  "sourcePixels": [
+    8268,
+    11811
+  ],
+  "sourceDpi": 300.0,
+  "targetMm": [
+    730,
+    1030
+  ],
+  "targetPixels": [
+    8760,
+    12360
+  ],
+  "targetDpi": 304.8,
+  "nativeColorMode": "CMYK",
+  "nativeDepth": 16,
+  "nativeRasterLayers": 2,
+  "sourceTextLayers": 0,
+  "proportionalScaleInPixels": 1.046482092964186,
+  "uncroppedOriginalCanvasWidthAfterScale": 8652.313944627891,
+  "leftAndRightCanvasExtensionMm": 4.486918973837874,
+  "sourceArtRect": [
+    590,
+    588,
+    7676,
+    11221
+  ],
+  "targetArtRect": [
+    671,
+    615,
+    8087,
+    11743
+  ],
+  "allArtworkKeptInsideCanvas": true,
+  "cmykProfileSha256": "842bd0543ab1ddd8fe1dd154a3752b461a1589eb39b37a28dee764a319d7b333",
+  "nativePsdBytes": 1263123888,
+  "printJpegBitDepth": 8,
+  "printJpegQuality": 97,
+  "adobePhotoshopExecutionTested": false,
+  "pdfPageMm": [
+    729.9998860677083,
+    1030.000006781684
+  ],
+  "pdfPageSizeVerifiedWithinMm": 0.001,
+  "pdfSourceCMYKProfileEmbedded": true,
+  "pdfPrintImagePixels": [
+    8760,
+    12360
+  ],
+  "pdfBytes": 39821034,
+  "pdfRenderingReadbackPassed": true,
+  "nativePsdSizeMm": [
+    729.9999926910001,
+    1029.9999896873014
+  ],
+  "nativePsdReopenPassed": true,
+  "nativeLayers": 2,
+  "nativeBitDepth": 16,
+  "profileUnchanged": true,
+  "allFourMergedPlanesMatchArtworkLayers": true,
+  "paperWhiteExtensionVerified": true,
+  "gitLfsObjectUploaded": true,
+  "gitLfsObjectSha256": "85afddc22c2c54bee14f9d71a6a95b43de97f0bcc5cf3f0b9bf3fc765dabff70"
+}
