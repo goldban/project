@@ -1,5 +1,7 @@
 # 안쪽면 식순 — 글꼴·크기·행간·정렬 통일
 
+**최신 첨부 이미지의 핑크 접지선 84·171mm에 맞춘 안쪽면은 [접지선 맞춤 수정본](../inside_fold_aligned)에 있습니다.**
+
 - [**수정 PSD 다운로드 — 이미지형**](https://github.com/goldban/project/raw/refs/heads/main/design/inside_schedule_clean/INSIDE_SCHEDULE_CLEAN_FLAT.psd)
 - [**완성 TIFF 다운로드**](https://github.com/goldban/project/raw/refs/heads/main/design/inside_schedule_clean/INSIDE_SCHEDULE_CLEAN.tif)
 - [**식순 글자 편집용 Photoshop 생성 패키지**](https://github.com/goldban/project/raw/refs/heads/main/design/inside_schedule_clean/Editable_Schedule_Package.zip)

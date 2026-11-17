@@ -1,0 +1,403 @@
+{
+  "width": 3508,
+  "height": 2480,
+  "dpi": 345.3612403100775,
+  "panelWidthsMm": [
+    84,
+    87,
+    87
+  ],
+  "foldsMm": [
+    84,
+    171
+  ],
+  "fontFamily": "Noto Serif CJK KR",
+  "titlePx": 88,
+  "headingPx": 58,
+  "bodyPx": 46,
+  "lineSpacingPx": 60,
+  "rows": [
+    {
+      "name": "Title",
+      "text": "식순",
+      "x": 130,
+      "y": 230,
+      "size": 88,
+      "bold": true,
+      "font": "NotoSerifCJKkr-Bold",
+      "color": "#453023"
+    },
+    {
+      "name": "Number 1",
+      "text": "1.",
+      "x": 130,
+      "y": 450,
+      "size": 58,
+      "bold": true,
+      "font": "NotoSerifCJKkr-Bold",
+      "color": "#9b4630"
+    },
+    {
+      "name": "Heading 1",
+      "text": "개회사",
+      "x": 230,
+      "y": 450,
+      "size": 58,
+      "bold": true,
+      "font": "NotoSerifCJKkr-Bold",
+      "color": "#432b1e"
+    },
+    {
+      "name": "Number 2",
+      "text": "2.",
+      "x": 130,
+      "y": 975,
+      "size": 58,
+      "bold": true,
+      "font": "NotoSerifCJKkr-Bold",
+      "color": "#9b4630"
+    },
+    {
+      "name": "Heading 2",
+      "text": "작품 상영(단편영화)",
+      "x": 230,
+      "y": 975,
+      "size": 58,
+      "bold": true,
+      "font": "NotoSerifCJKkr-Bold",
+      "color": "#432b1e"
+    },
+    {
+      "name": "Number 3",
+      "text": "3.",
+      "x": 130,
+      "y": 1315,
+      "size": 58,
+      "bold": true,
+      "font": "NotoSerifCJKkr-Bold",
+      "color": "#9b4630"
+    },
+    {
+      "name": "Heading 3",
+      "text": "쉬는 시간",
+      "x": 230,
+      "y": 1315,
+      "size": 58,
+      "bold": true,
+      "font": "NotoSerifCJKkr-Bold",
+      "color": "#432b1e"
+    },
+    {
+      "name": "Number 4",
+      "text": "4.",
+      "x": 130,
+      "y": 1515,
+      "size": 58,
+      "bold": true,
+      "font": "NotoSerifCJKkr-Bold",
+      "color": "#9b4630"
+    },
+    {
+      "name": "Heading 4",
+      "text": "작품 상영(다큐멘터리)",
+      "x": 230,
+      "y": 1515,
+      "size": 58,
+      "bold": true,
+      "font": "NotoSerifCJKkr-Bold",
+      "color": "#432b1e"
+    },
+    {
+      "name": "Number 5",
+      "text": "5.",
+      "x": 130,
+      "y": 2015,
+      "size": 58,
+      "bold": true,
+      "font": "NotoSerifCJKkr-Bold",
+      "color": "#9b4630"
+    },
+    {
+      "name": "Heading 5",
+      "text": "시상식",
+      "x": 230,
+      "y": 2015,
+      "size": 58,
+      "bold": true,
+      "font": "NotoSerifCJKkr-Bold",
+      "color": "#432b1e"
+    },
+    {
+      "name": "Opening 535",
+      "text": "- 사회자 인사",
+      "x": 265,
+      "y": 535,
+      "size": 46,
+      "bold": false,
+      "font": "NotoSerifCJKkr-Regular",
+      "color": "#453023"
+    },
+    {
+      "name": "Opening 595",
+      "text": "- 내빈 소개(참석 교수)",
+      "x": 265,
+      "y": 595,
+      "size": 46,
+      "bold": false,
+      "font": "NotoSerifCJKkr-Regular",
+      "color": "#453023"
+    },
+    {
+      "name": "Opening 655",
+      "text": "- 학과장 축사",
+      "x": 265,
+      "y": 655,
+      "size": 46,
+      "bold": false,
+      "font": "NotoSerifCJKkr-Regular",
+      "color": "#453023"
+    },
+    {
+      "name": "Opening 715",
+      "text": "- 시사회 소개",
+      "x": 265,
+      "y": 715,
+      "size": 46,
+      "bold": false,
+      "font": "NotoSerifCJKkr-Regular",
+      "color": "#453023"
+    },
+    {
+      "name": "Opening continuation",
+      "text": "(타이틀 및 컨셉 소개)",
+      "x": 298,
+      "y": 775,
+      "size": 46,
+      "bold": false,
+      "font": "NotoSerifCJKkr-Regular",
+      "color": "#453023"
+    },
+    {
+      "name": "Short film 1",
+      "text": "- 옷장에 있어",
+      "x": 265,
+      "y": 1060,
+      "size": 46,
+      "bold": false,
+      "font": "NotoSerifCJKkr-Regular",
+      "color": "#453023"
+    },
+    {
+      "name": "Short film 2",
+      "text": "- 삐에로의 식사",
+      "x": 265,
+      "y": 1120,
+      "size": 46,
+      "bold": false,
+      "font": "NotoSerifCJKkr-Regular",
+      "color": "#453023"
+    },
+    {
+      "name": "Documentary 1",
+      "text": "- 사자놀이 : 속초,",
+      "x": 265,
+      "y": 1600,
+      "size": 46,
+      "bold": false,
+      "font": "NotoSerifCJKkr-Regular",
+      "color": "#453023"
+    },
+    {
+      "name": "Documentary 1 continuation",
+      "text": "70년을 춤추다",
+      "x": 298,
+      "y": 1660,
+      "size": 46,
+      "bold": false,
+      "font": "NotoSerifCJKkr-Regular",
+      "color": "#453023"
+    },
+    {
+      "name": "Documentary 2",
+      "text": "- 안녕",
+      "x": 265,
+      "y": 1720,
+      "size": 46,
+      "bold": false,
+      "font": "NotoSerifCJKkr-Regular",
+      "color": "#453023"
+    },
+    {
+      "name": "Documentary 3",
+      "text": "- 숨으로 빚다",
+      "x": 265,
+      "y": 1780,
+      "size": 46,
+      "bold": false,
+      "font": "NotoSerifCJKkr-Regular",
+      "color": "#453023"
+    }
+  ],
+  "metrics": [
+    {
+      "name": "Title",
+      "left": 130,
+      "top": 154,
+      "right": 300.01611328125,
+      "bottom": 242
+    },
+    {
+      "name": "Number 1",
+      "left": 130,
+      "top": 408,
+      "right": 183.59207153320312,
+      "bottom": 451
+    },
+    {
+      "name": "Heading 1",
+      "left": 230,
+      "top": 399,
+      "right": 398.0842742919922,
+      "bottom": 457
+    },
+    {
+      "name": "Number 2",
+      "left": 130,
+      "top": 933,
+      "right": 183.59207153320312,
+      "bottom": 976
+    },
+    {
+      "name": "Heading 2",
+      "left": 230,
+      "top": 924,
+      "right": 739.1248168945312,
+      "bottom": 987
+    },
+    {
+      "name": "Number 3",
+      "left": 130,
+      "top": 1273,
+      "right": 183.59207153320312,
+      "bottom": 1316
+    },
+    {
+      "name": "Heading 3",
+      "left": 230,
+      "top": 1264,
+      "right": 468.6123809814453,
+      "bottom": 1322
+    },
+    {
+      "name": "Number 4",
+      "left": 130,
+      "top": 1473,
+      "right": 183.59207153320312,
+      "bottom": 1516
+    },
+    {
+      "name": "Heading 4",
+      "left": 230,
+      "top": 1464,
+      "right": 795.1529541015625,
+      "bottom": 1527
+    },
+    {
+      "name": "Number 5",
+      "left": 130,
+      "top": 1974,
+      "right": 183.59207153320312,
+      "bottom": 2016
+    },
+    {
+      "name": "Heading 5",
+      "left": 230,
+      "top": 1964,
+      "right": 398.0842742919922,
+      "bottom": 2023
+    },
+    {
+      "name": "Opening 535",
+      "left": 265,
+      "top": 495,
+      "right": 526.6480102539062,
+      "bottom": 541
+    },
+    {
+      "name": "Opening 595",
+      "left": 265,
+      "top": 555,
+      "right": 705.2200317382812,
+      "bottom": 605
+    },
+    {
+      "name": "Opening 655",
+      "left": 265,
+      "top": 615,
+      "right": 526.6480102539062,
+      "bottom": 662
+    },
+    {
+      "name": "Opening 715",
+      "left": 265,
+      "top": 675,
+      "right": 526.6480102539062,
+      "bottom": 721
+    },
+    {
+      "name": "Opening continuation",
+      "left": 298,
+      "top": 735,
+      "right": 722.3040771484375,
+      "bottom": 785
+    },
+    {
+      "name": "Short film 1",
+      "left": 265,
+      "top": 1020,
+      "right": 526.6480102539062,
+      "bottom": 1067
+    },
+    {
+      "name": "Short film 2",
+      "left": 265,
+      "top": 1080,
+      "right": 571.0840454101562,
+      "bottom": 1127
+    },
+    {
+      "name": "Documentary 1",
+      "left": 265,
+      "top": 1560,
+      "right": 612.9440307617188,
+      "bottom": 1608
+    },
+    {
+      "name": "Documentary 1 continuation",
+      "left": 298,
+      "top": 1620,
+      "right": 582.83203125,
+      "bottom": 1667
+    },
+    {
+      "name": "Documentary 2",
+      "left": 265,
+      "top": 1680,
+      "right": 381.5640106201172,
+      "bottom": 1726
+    },
+    {
+      "name": "Documentary 3",
+      "left": 265,
+      "top": 1740,
+      "right": 526.6480102539062,
+      "bottom": 1786
+    }
+  ],
+  "dividers": [
+    860,
+    1200,
+    1400,
+    1900
+  ]
+}

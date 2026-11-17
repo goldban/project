@@ -1,0 +1,544 @@
+{
+  "pixels": [
+    3508,
+    2480
+  ],
+  "physicalMm": [
+    258,
+    182.3945267958951
+  ],
+  "panelWidthsMm": [
+    84,
+    87,
+    87
+  ],
+  "foldsMm": [
+    84,
+    171
+  ],
+  "foldsPixels": [
+    1142,
+    2325
+  ],
+  "reference": "Latest uploaded screenshot pink lines approximately 84mm and 171mm",
+  "scheduleFontsAndSizesPreserved": true,
+  "schedulePositionShiftX": -20,
+  "scheduleMinimumRightMarginPixels": 326.8470458984375,
+  "bodyTextMinimumFoldPaddingPixels": 42,
+  "bodyTextMinimumFoldPaddingMm": 3.088939566704675,
+  "checkedTextBlocks": [
+    {
+      "name": "작품 1 상세",
+      "left": 2074,
+      "right": 2237,
+      "panel": 1,
+      "safeLeft": 1184,
+      "safeRight": 2283
+    },
+    {
+      "name": "단편 섹션 제목",
+      "left": 1298,
+      "right": 1592,
+      "panel": 1,
+      "safeLeft": 1184,
+      "safeRight": 2283
+    },
+    {
+      "name": "영문 소제목",
+      "left": 1300,
+      "right": 1511,
+      "panel": 1,
+      "safeLeft": 1184,
+      "safeRight": 2283
+    },
+    {
+      "name": "면 번호",
+      "left": 2164,
+      "right": 2194,
+      "panel": 1,
+      "safeLeft": 1184,
+      "safeRight": 2283
+    },
+    {
+      "name": "작품 1 제목",
+      "left": 1887,
+      "right": 2132,
+      "panel": 1,
+      "safeLeft": 1184,
+      "safeRight": 2283
+    },
+    {
+      "name": "작품 1 소개",
+      "left": 1732,
+      "right": 2283,
+      "panel": 1,
+      "safeLeft": 1184,
+      "safeRight": 2283
+    },
+    {
+      "name": "작품 1 상세",
+      "left": 1787,
+      "right": 2213,
+      "panel": 1,
+      "safeLeft": 1184,
+      "safeRight": 2283
+    },
+    {
+      "name": "작품 2 제목",
+      "left": 1906,
+      "right": 2141,
+      "panel": 1,
+      "safeLeft": 1184,
+      "safeRight": 2283
+    },
+    {
+      "name": "작품 2 소개",
+      "left": 1753,
+      "right": 2283,
+      "panel": 1,
+      "safeLeft": 1184,
+      "safeRight": 2283
+    },
+    {
+      "name": "다큐 섹션 제목",
+      "left": 2469,
+      "right": 2810,
+      "panel": 2,
+      "safeLeft": 2367,
+      "safeRight": 3466
+    },
+    {
+      "name": "영문 소제목",
+      "left": 2471,
+      "right": 2721,
+      "panel": 2,
+      "safeLeft": 2367,
+      "safeRight": 3466
+    },
+    {
+      "name": "면 번호",
+      "left": 3327,
+      "right": 3357,
+      "panel": 2,
+      "safeLeft": 2367,
+      "safeRight": 3466
+    },
+    {
+      "name": "다큐 1 소개",
+      "left": 2827,
+      "right": 3389,
+      "panel": 2,
+      "safeLeft": 2367,
+      "safeRight": 3466
+    },
+    {
+      "name": "다큐 1 제목",
+      "left": 2821,
+      "right": 3389,
+      "panel": 2,
+      "safeLeft": 2367,
+      "safeRight": 3466
+    },
+    {
+      "name": "다큐 2 제목",
+      "left": 2635,
+      "right": 2717,
+      "panel": 2,
+      "safeLeft": 2367,
+      "safeRight": 3466
+    },
+    {
+      "name": "다큐 2 소개",
+      "left": 2430,
+      "right": 2946,
+      "panel": 2,
+      "safeLeft": 2367,
+      "safeRight": 3466
+    },
+    {
+      "name": "다큐 3 제목",
+      "left": 3007,
+      "right": 3267,
+      "panel": 2,
+      "safeLeft": 2367,
+      "safeRight": 3466
+    },
+    {
+      "name": "다큐 3 소개",
+      "left": 2885,
+      "right": 3411,
+      "panel": 2,
+      "safeLeft": 2367,
+      "safeRight": 3466
+    }
+  ],
+  "movedObjects": [
+    {
+      "name": "작품 1 상세",
+      "panel": 1,
+      "oldLeft": 2115,
+      "newLeft": 2074,
+      "y": 2302,
+      "width": 163,
+      "height": 64,
+      "nativeText": true,
+      "extraTextInset": 0
+    },
+    {
+      "name": "레이어 10",
+      "panel": 1,
+      "oldLeft": 1202,
+      "newLeft": 1161,
+      "y": 1134,
+      "width": 862,
+      "height": 339,
+      "nativeText": false,
+      "extraTextInset": 0
+    },
+    {
+      "name": "레이어 6",
+      "panel": 1,
+      "oldLeft": 2009,
+      "newLeft": 1968,
+      "y": 1103,
+      "width": 309,
+      "height": 351,
+      "nativeText": false,
+      "extraTextInset": 0
+    },
+    {
+      "name": "단편 섹션 제목",
+      "panel": 1,
+      "oldLeft": 1339,
+      "newLeft": 1298,
+      "y": 130,
+      "width": 294,
+      "height": 74,
+      "nativeText": true,
+      "extraTextInset": 0
+    },
+    {
+      "name": "영문 소제목",
+      "panel": 1,
+      "oldLeft": 1341,
+      "newLeft": 1300,
+      "y": 236,
+      "width": 211,
+      "height": 19,
+      "nativeText": true,
+      "extraTextInset": 0
+    },
+    {
+      "name": "면 번호",
+      "panel": 1,
+      "oldLeft": 2205,
+      "newLeft": 2164,
+      "y": 173,
+      "width": 30,
+      "height": 23,
+      "nativeText": true,
+      "extraTextInset": 0
+    },
+    {
+      "name": "제목 구분선",
+      "panel": 1,
+      "oldLeft": 1707,
+      "newLeft": 1666,
+      "y": 245,
+      "width": 578,
+      "height": 2,
+      "nativeText": false,
+      "extraTextInset": 0
+    },
+    {
+      "name": "작품 1 제목",
+      "panel": 1,
+      "oldLeft": 1928,
+      "newLeft": 1887,
+      "y": 314,
+      "width": 245,
+      "height": 48,
+      "nativeText": true,
+      "extraTextInset": 0
+    },
+    {
+      "name": "작품 1 소개",
+      "panel": 1,
+      "oldLeft": 1786,
+      "newLeft": 1732,
+      "y": 439,
+      "width": 551,
+      "height": 328,
+      "nativeText": true,
+      "extraTextInset": -13
+    },
+    {
+      "name": "작품 1 상세",
+      "panel": 1,
+      "oldLeft": 1828,
+      "newLeft": 1787,
+      "y": 855,
+      "width": 426,
+      "height": 67,
+      "nativeText": true,
+      "extraTextInset": 0
+    },
+    {
+      "name": "작품 2 제목",
+      "panel": 1,
+      "oldLeft": 1947,
+      "newLeft": 1906,
+      "y": 1571,
+      "width": 235,
+      "height": 37,
+      "nativeText": true,
+      "extraTextInset": 0
+    },
+    {
+      "name": "레이어 3",
+      "panel": 1,
+      "oldLeft": 1245,
+      "newLeft": 1204,
+      "y": 314,
+      "width": 503,
+      "height": 754,
+      "nativeText": false,
+      "extraTextInset": 0
+    },
+    {
+      "name": "작품 2 소개",
+      "panel": 1,
+      "oldLeft": 1798,
+      "newLeft": 1753,
+      "y": 1693,
+      "width": 530,
+      "height": 523,
+      "nativeText": true,
+      "extraTextInset": -4
+    },
+    {
+      "name": "다큐 섹션 제목",
+      "panel": 2,
+      "oldLeft": 2486,
+      "newLeft": 2469,
+      "y": 130,
+      "width": 341,
+      "height": 74,
+      "nativeText": true,
+      "extraTextInset": 0
+    },
+    {
+      "name": "영문 소제목",
+      "panel": 2,
+      "oldLeft": 2488,
+      "newLeft": 2471,
+      "y": 242,
+      "width": 250,
+      "height": 19,
+      "nativeText": true,
+      "extraTextInset": 0
+    },
+    {
+      "name": "면 번호",
+      "panel": 2,
+      "oldLeft": 3344,
+      "newLeft": 3327,
+      "y": 173,
+      "width": 30,
+      "height": 23,
+      "nativeText": true,
+      "extraTextInset": 0
+    },
+    {
+      "name": "제목 구분선",
+      "panel": 2,
+      "oldLeft": 2976,
+      "newLeft": 2959,
+      "y": 245,
+      "width": 445,
+      "height": 2,
+      "nativeText": false,
+      "extraTextInset": 0
+    },
+    {
+      "name": "다큐 1 소개",
+      "panel": 2,
+      "oldLeft": 2844,
+      "newLeft": 2827,
+      "y": 395,
+      "width": 562,
+      "height": 486,
+      "nativeText": true,
+      "extraTextInset": 0
+    },
+    {
+      "name": "다큐 1 제목",
+      "panel": 2,
+      "oldLeft": 2838,
+      "newLeft": 2821,
+      "y": 314,
+      "width": 568,
+      "height": 48,
+      "nativeText": true,
+      "extraTextInset": 0
+    },
+    {
+      "name": "다큐 2 제목",
+      "panel": 2,
+      "oldLeft": 2652,
+      "newLeft": 2635,
+      "y": 1021,
+      "width": 82,
+      "height": 47,
+      "nativeText": true,
+      "extraTextInset": 0
+    },
+    {
+      "name": "3조",
+      "panel": 2,
+      "oldLeft": 2435,
+      "newLeft": 2418,
+      "y": 1749,
+      "width": 431,
+      "height": 638,
+      "nativeText": false,
+      "extraTextInset": 0
+    },
+    {
+      "name": "레이어 9",
+      "panel": 2,
+      "oldLeft": 2810,
+      "newLeft": 2793,
+      "y": 1504,
+      "width": 180,
+      "height": 241,
+      "nativeText": false,
+      "extraTextInset": 0
+    },
+    {
+      "name": "다큐 2 소개",
+      "panel": 2,
+      "oldLeft": 2447,
+      "newLeft": 2430,
+      "y": 1093,
+      "width": 516,
+      "height": 493,
+      "nativeText": true,
+      "extraTextInset": 0
+    },
+    {
+      "name": "다큐 3 제목",
+      "panel": 2,
+      "oldLeft": 3024,
+      "newLeft": 3007,
+      "y": 1743,
+      "width": 260,
+      "height": 51,
+      "nativeText": true,
+      "extraTextInset": 0
+    },
+    {
+      "name": "다큐 3 소개",
+      "panel": 2,
+      "oldLeft": 2902,
+      "newLeft": 2885,
+      "y": 1818,
+      "width": 526,
+      "height": 493,
+      "nativeText": true,
+      "extraTextInset": 0
+    },
+    {
+      "name": "삐에로의 식사 찐_",
+      "panel": 1,
+      "oldLeft": 1241,
+      "newLeft": 1200,
+      "y": 1571,
+      "width": 532,
+      "height": 789,
+      "nativeText": false,
+      "extraTextInset": 0
+    },
+    {
+      "name": "사자놀이 포스터",
+      "panel": 2,
+      "oldLeft": 2438,
+      "newLeft": 2421,
+      "y": 351,
+      "width": 368,
+      "height": 550,
+      "nativeText": false,
+      "extraTextInset": 0
+    },
+    {
+      "name": "레이어 7 복사",
+      "panel": 2,
+      "oldLeft": 2396,
+      "newLeft": 2379,
+      "y": 251,
+      "width": 278,
+      "height": 310,
+      "nativeText": false,
+      "extraTextInset": 0
+    },
+    {
+      "name": "레이어 4",
+      "panel": 2,
+      "oldLeft": 3017,
+      "newLeft": 3000,
+      "y": 1021,
+      "width": 419,
+      "height": 648,
+      "nativeText": false,
+      "extraTextInset": 0
+    },
+    {
+      "name": "레이어 7 복사 2",
+      "panel": 2,
+      "oldLeft": 3150,
+      "newLeft": 3133,
+      "y": 2090,
+      "width": 312,
+      "height": 350,
+      "nativeText": false,
+      "extraTextInset": 0
+    },
+    {
+      "name": "레이어 8",
+      "panel": 1,
+      "oldLeft": 1166,
+      "newLeft": 1125,
+      "y": 131,
+      "width": 191,
+      "height": 258,
+      "nativeText": false,
+      "extraTextInset": 0
+    },
+    {
+      "name": "레이어 8 복사",
+      "panel": 1,
+      "oldLeft": 1175,
+      "newLeft": 1134,
+      "y": 1407,
+      "width": 191,
+      "height": 258,
+      "nativeText": false,
+      "extraTextInset": 0
+    }
+  ],
+  "adobePhotoshopExecutionTested": false,
+  "mm": [
+    258,
+    182.3945267958951
+  ],
+  "fontFamilyUnified": "Noto Serif CJK KR",
+  "titlePx": 88,
+  "headingPx": 58,
+  "bodyPx": 46,
+  "bodyBaselineSpacingPx": 60,
+  "nativeTextItemsCreatedByPhotoshopScript": 22,
+  "flatPsdHasNoTextOrEffects": true,
+  "flatPsdAndTiffPixelsVerified": true,
+  "allTextInSafeMargin": true,
+  "onlyLeftSchedulePanelReorganized": true
+}
