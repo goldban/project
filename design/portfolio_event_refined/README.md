@@ -8,3 +8,11 @@
 - [전체 미리보기](All_Slides_Preview.jpg)
 
 배경은 첨부 이미지를 참고해 재구성했습니다. 본문은 편집 가능한 텍스트이며 Noto Serif CJK KR 글꼴 사용. PDF는 글꼴이 포함됩니다. PPTX 무결성, 재열기와 PDF 6장 구성을 확인했습니다. 실제 PowerPoint 실행 검증은 하지 않았습니다.
+
+## 포스터 첫 장 추가본 (7장)
+
+기존에 제작한 첫단추 포스터 표지를 첫 장에 추가했습니다. 새로 첨부한 이미지 원본을 직접 삽입한 버전은 아닙니다. 세로 포스터 전체를 보존하고 양옆은 배경으로 채웠습니다.
+
+- [PPT](First_Button_Event_With_Poster.pptx)
+- [PDF](First_Button_Event_With_Poster.pdf)
+- [첫 화면 미리보기](Poster_Opening_Preview.png)
